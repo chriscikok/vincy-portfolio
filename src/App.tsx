@@ -1,10 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './styles/globals.css'
-import { LanguageToggle } from './components/LanguageToggle'
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
-import { Subtitles } from 'lucide-react'
 import { PageNavigation } from './components/PageNavigation';
 import { StudentHeader } from './components/StudentHeader';
 import { SkillsAssessment } from './components/SkillsAssessment';
