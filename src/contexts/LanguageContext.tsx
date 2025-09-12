@@ -29,7 +29,7 @@ const translations = {
     
     // Student Overview
     'overview.title': 'Student Overview',
-    'overview.subtitle': 'Get to know Emma Rodriguez',
+    'overview.subtitle': 'Get to know Vinky Kok',
     'overview.ready': 'Ready for the next adventure in learning! 🌟',
     'overview.summary': 'Portfolio Summary',
     'overview.highest': 'Highest Skill Level',
@@ -144,9 +144,9 @@ const translations = {
     
     // General
     'student.age': 'Age',
-    'student.grade': 'Kindergarten Graduate',
-    'student.school': 'Sunshine Elementary',
-    'footer.message': "Portfolio prepared with love for Emma's educational journey 💫"
+    'student.grade': 'Kindergarten 3',
+    'student.school': 'Wayfoong Nursery School',
+    'footer.message': "Portfolio prepared with love for Vincy's educational journey 💫"
   },
   zh: {
     // Navigation
@@ -165,7 +165,7 @@ const translations = {
     
     // Student Overview
     'overview.title': '學生概覽',
-    'overview.subtitle': '認識艾瑪·羅德里格茲',
+    'overview.subtitle': '認識郭穎珊',
     'overview.ready': '準備好迎接學習的下一個冒險！🌟',
     'overview.summary': '作品集摘要',
     'overview.highest': '最高技能水準',
@@ -280,9 +280,9 @@ const translations = {
     
     // General
     'student.age': '年齡',
-    'student.grade': '幼稚園畢業生',
-    'student.school': '陽光小學',
-    'footer.message': '用愛為艾瑪的教育旅程準備的作品集 💫'
+    'student.grade': '幼稚園高班',
+    'student.school': '滙豐幼兒學校',
+    'footer.message': '用愛為穎珊的教育旅程準備的作品集 💫'
   }
 };
 

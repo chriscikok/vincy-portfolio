@@ -18,10 +18,10 @@ function PortfolioApp() {
   const student = {
     name: "Vincy Kok",
     age: 5,
-    grade: "Kindergarten Graduate",
+    grade: "Kindergarten 3",
     school: "Wayfoong Nursery School",
     favoriteColor: "#ff6b9d",
-    photo: "https://vincykok.s3.ap-east-1.amazonaws.com/VincyKok.png"
+    photo: "https://d10ir6fnh9pb6o.cloudfront.net/VincyKok.png"
   };
 
   const skills = [
@@ -45,8 +45,8 @@ function PortfolioApp() {
       title: "Playing with Clay",
       type: "Video",
       description: "A delightful video showing Emma creating her clay dinosaur with focused concentration and creativity.",
-      image: "https://vincykok.s3.ap-east-1.amazonaws.com/VincyKok.png",
-      videoUrl: "https://vincykok.s3.ap-east-1.amazonaws.com/IMG_7036.MOV",
+      image: "https://d10ir6fnh9pb6o.cloudfront.net/VincyKok.png",
+      videoUrl: "https://d10ir6fnh9pb6o.cloudfront.net/IMG_7036.mp4",
       date: "February 2025",
       mediaType: "video"
     },
