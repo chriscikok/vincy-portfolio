@@ -57,7 +57,9 @@ function PortfolioApp() {
       title: t('artwork.family'),
       type: t('artwork.drawing'),
       description: t('artwork.family.desc'),
-      image: "https://images.unsplash.com/flagged/photo-1551277816-36355be656eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGFydCUyMGRyYXdpbmclMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NTcxMTU5NDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      images: ["https://images.unsplash.com/flagged/photo-1551277816-36355be656eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGFydCUyMGRyYXdpbmclMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NTcxMTU5NDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "https://d10ir6fnh9pb6o.cloudfront.net/IMG_6882.png"
+      ],
       date: "March 2025",
       mediaType: "image"
     },
@@ -65,7 +67,7 @@ function PortfolioApp() {
       title: t('artwork.dancing.performance'),
       type: "Video",
       description: t('artwork.dancing.performance.desc'),
-      image: "https://d10ir6fnh9pb6o.cloudfront.net/IMG_6882.png",
+      images: ["https://d10ir6fnh9pb6o.cloudfront.net/IMG_6882.png"],
       videoUrl: "https://d10ir6fnh9pb6o.cloudfront.net/IMG_7036.mp4",
       date: "August 2025",
       mediaType: "video"
@@ -74,7 +76,7 @@ function PortfolioApp() {
       title: t('artwork.dinosaur'),
       type: t('artwork.sculpture'),
       description: t('artwork.dinosaur.desc'),
-      image: "https://images.unsplash.com/flagged/photo-1551277816-36355be656eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGFydCUyMGRyYXdpbmclMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NTcxMTU5NDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      images: ["https://images.unsplash.com/flagged/photo-1551277816-36355be656eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGFydCUyMGRyYXdpbmclMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NTcxMTU5NDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"],
       date: "February 2025",
       mediaType: "image"
     }
