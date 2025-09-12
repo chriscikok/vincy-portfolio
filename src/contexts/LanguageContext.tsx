@@ -42,7 +42,7 @@ const translations = {
     
     // Academic Skills
     'academic.title': 'Academic Skills Assessment',
-    'academic.subtitle': "Emma's learning progress and readiness",
+    'academic.subtitle': "Vincy's learning progress and readiness",
     'academic.excellent': 'Excellent',
     'academic.good': 'Good',
     'academic.developing': 'Developing',
@@ -51,7 +51,7 @@ const translations = {
     'skill.letter': 'Letter Recognition',
     'skill.letter.desc': 'Recognizes all uppercase and lowercase letters. Can identify letter sounds and beginning sounds in words.',
     'skill.number': 'Number Skills',
-    'skill.number.desc': 'Counts to 50, recognizes numbers 1-20, understands basic addition and subtraction concepts.',
+    'skill.number.desc': 'Counts to 150, recognizes numbers 1-99, understands basic addition and subtraction concepts.',
     'skill.reading': 'Reading Readiness',
     'skill.reading.desc': 'Shows strong phonemic awareness, can blend simple sounds, and reads sight words independently.',
     'skill.writing': 'Writing Skills',
@@ -73,6 +73,8 @@ const translations = {
     'artwork.drawing': 'Drawing',
     'artwork.painting': 'Painting',
     'artwork.sculpture': 'Sculpture',
+    'artwork.dancing.performance': 'Dancing performance 2025',
+    'artwork.dancing.performance.desc': 'Participate in Annual Performance & Prize Presentation Ceremony of Petite Princess Academy of Dance in Sai Wan Ho Civic Centre',
     
     // Social Skills
     'social.title': 'Social & Emotional Development',
@@ -102,7 +104,7 @@ const translations = {
     
     // Interests
     'interests.title': 'Interests & Hobbies',
-    'interests.subtitle': 'What Emma loves to explore and learn about',
+    'interests.subtitle': 'What Vincy loves to explore and learn about',
     'interest.dinosaurs': 'Dinosaurs',
     'interest.dinosaurs.desc': 'Fascinated by dinosaurs and can name many different species. Loves dinosaur books and documentaries.',
     'interest.art': 'Art & Crafts',
@@ -115,6 +117,8 @@ const translations = {
     'interest.music.desc': 'Loves singing songs and moving to music. Shows good rhythm and enjoys music activities.',
     'interest.outdoor': 'Outdoor Exploration',
     'interest.outdoor.desc': 'Enjoys nature walks, collecting leaves and rocks, and learning about plants and animals.',
+    "interest.cooking": 'Cooking',
+    "interest.cooking.desc": 'Enjoys cooking food and share with family and friends',
     
     // Categories
     'category.science': 'Science',
@@ -178,7 +182,7 @@ const translations = {
     
     // Academic Skills
     'academic.title': '學術技能評估',
-    'academic.subtitle': '艾瑪的學習進度和準備情況',
+    'academic.subtitle': '穎珊的學習進度和準備情況',
     'academic.excellent': '優秀',
     'academic.good': '良好',
     'academic.developing': '發展中',
@@ -187,7 +191,7 @@ const translations = {
     'skill.letter': '字母識別',
     'skill.letter.desc': '能夠識別所有大小寫字母。能夠識別字母音和單詞開頭音。',
     'skill.number': '數字技能',
-    'skill.number.desc': '能數到50，識別1-20的數字，理解基本加減概念。',
+    'skill.number.desc': '能數到150，識別1-99的數字，理解基本加減概念。',
     'skill.reading': '閱讀準備',
     'skill.reading.desc': '表現出強烈的音素意識，能夠混合簡單音素，獨立閱讀視覺詞彙。',
     'skill.writing': '書寫技能',
@@ -209,6 +213,9 @@ const translations = {
     'artwork.drawing': '繪畫',
     'artwork.painting': '彩繪',
     'artwork.sculpture': '雕塑',
+    'artwork.dancing.performance': '跳舞表演 2025',
+    'artwork.dancing.performance.desc': '參加在西灣河文娛中心舉行之2025年度小公主舞蹈學院周年大匯演暨頒獎典禮',
+    
     
     // Social Skills
     'social.title': '社會與情感發展',
@@ -238,7 +245,7 @@ const translations = {
     
     // Interests
     'interests.title': '興趣與愛好',
-    'interests.subtitle': '艾瑪喜歡探索和學習的事物',
+    'interests.subtitle': '穎珊喜歡探索和學習的事物',
     'interest.dinosaurs': '恐龍',
     'interest.dinosaurs.desc': '對恐龍著迷，能說出許多不同物種的名稱。喜愛恐龍書籍和紀錄片。',
     'interest.art': '藝術與手工',
@@ -251,6 +258,8 @@ const translations = {
     'interest.music.desc': '喜愛唱歌和隨音樂律動。展現良好的節拍感，享受音樂活動。',
     'interest.outdoor': '戶外探索',
     'interest.outdoor.desc': '享受自然散步，收集樹葉和石頭，學習植物和動物知識。',
+    'interest.cooking': '料理',
+    'interest.cooking.desc': '喜愛煮食和分享給家人與朋友',
     
     // Categories
     'category.science': '科學',

@@ -27,8 +27,28 @@ function PortfolioApp() {
   const skills = [
     {
       name: t('skill.letter'),
-      level: 95,
+      level: 100,
       description: t('skill.letter.desc')
+    },{
+      name: t('skill.number'),
+      level: 100,
+      description: t('skill.number.desc')
+    },{
+      name: t('skill.reading'),
+      level: 100,
+      description: t('skill.reading.desc')
+    },{
+      name: t('skill.writing'),
+      level: 100,
+      description: t('skill.writing.desc')
+    },{
+      name: t('skill.listening'),
+      level: 100,
+      description: t('skill.listening.desc')
+    },{
+      name: t('skill.problem'),
+      level: 100,
+      description: t('skill.problem.desc')
     }
   ];
 
@@ -42,12 +62,12 @@ function PortfolioApp() {
       mediaType: "image"
     },
     {
-      title: "Playing with Clay",
+      title: t('artwork.dancing.performance'),
       type: "Video",
-      description: "A delightful video showing Emma creating her clay dinosaur with focused concentration and creativity.",
-      image: "https://d10ir6fnh9pb6o.cloudfront.net/VincyKok.png",
+      description: t('artwork.dancing.performance.desc'),
+      image: "https://d10ir6fnh9pb6o.cloudfront.net/IMG_6882.png",
       videoUrl: "https://d10ir6fnh9pb6o.cloudfront.net/IMG_7036.mp4",
-      date: "February 2025",
+      date: "August 2025",
       mediaType: "video"
     },
     {
@@ -89,9 +109,9 @@ function PortfolioApp() {
 
   const interests = [
     {
-      name: t('interest.dinosaurs'),
-      description: t('interest.dinosaurs.desc'),
-      image: "https://images.unsplash.com/photo-1544772711-57da9c7368fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraW5kZXJnYXJ0ZW4lMjBjbGFzc3Jvb20lMjBhY3Rpdml0aWVzfGVufDF8fHx8MTc1NzEyMjIzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      name: t('interest.cooking'),
+      description: t('interest.cooking.desc'),
+      image: "https://d10ir6fnh9pb6o.cloudfront.net/vincy_hobbies_cooking.jpeg",
       category: t('category.science')
     },
     {
