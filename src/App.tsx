@@ -54,13 +54,13 @@ function PortfolioApp() {
 
   const artworks = [
     {
-      title: t('artwork.family'),
-      type: t('artwork.drawing'),
-      description: t('artwork.family.desc'),
-      images: ["https://images.unsplash.com/flagged/photo-1551277816-36355be656eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGFydCUyMGRyYXdpbmclMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NTcxMTU5NDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        "https://d10ir6fnh9pb6o.cloudfront.net/IMG_6882.png"
+      title: t('artwork.dancing.prize'),
+      type: t('artwork.dancing'),
+      description: t('artwork.dancing.prize.desc'),
+      images: ["https://d10ir6fnh9pb6o.cloudfront.net/Vincy_Aug_Performance_1.jpeg",
+        "https://d10ir6fnh9pb6o.cloudfront.net/Vincy_Aug_Performance_2.jpeg","https://d10ir6fnh9pb6o.cloudfront.net/Vincy_Aug_Performance_3.jpeg",
       ],
-      date: "March 2025",
+      date: "Aug 2025",
       mediaType: "image"
     },
     {

@@ -73,8 +73,11 @@ const translations = {
     'artwork.drawing': 'Drawing',
     'artwork.painting': 'Painting',
     'artwork.sculpture': 'Sculpture',
+    'artwork.dancing': 'Dancing',
     'artwork.dancing.performance': 'Dancing performance 2025',
-    'artwork.dancing.performance.desc': 'Participate in Annual Performance & Prize Presentation Ceremony of Petite Princess Academy of Dance in Sai Wan Ho Civic Centre',
+    'artwork.dancing.performance.desc': 'Participate in Annual Performance of Petite Princess Academy of Dance in Sai Wan Ho Civic Centre',
+    'artwork.dancing.prize': 'Prize Presentation Ceremony',
+    'artwork.dancing.prize.desc': 'Obtain Honorable Award from Petite Princess Academy of Dance',
     
     // Social Skills
     'social.title': 'Social & Emotional Development',
@@ -213,8 +216,11 @@ const translations = {
     'artwork.drawing': '繪畫',
     'artwork.painting': '彩繪',
     'artwork.sculpture': '雕塑',
+    'artwork.dancing': '跳舞',
     'artwork.dancing.performance': '跳舞表演 2025',
     'artwork.dancing.performance.desc': '參加在西灣河文娛中心舉行之2025年度小公主舞蹈學院周年大匯演暨頒獎典禮',
+    'artwork.dancing.prize': '小公主舞蹈學院',
+    'artwork.dancing.prize.desc': '獲得卓越表現大獎',
     
     
     // Social Skills
