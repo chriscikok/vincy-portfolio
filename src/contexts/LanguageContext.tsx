@@ -18,14 +18,16 @@ const translations = {
     'nav.next': 'Next',
     'nav.page': 'Page',
     'nav.of': 'of',
+    'nav.end': ' ',
     
     // Page Titles
     'page.overview': 'Overview',
-    'page.academic': 'Academic Skills',
+    'page.skills': 'Skills & Development',
     'page.creative': 'Creative Work',
-    'page.social': 'Social Skills',
     'page.interests': 'Interests',
     'page.comments': 'Teacher Comments',
+    'page.awards': 'Awards & Certificates',
+    'page.personal': 'Personal & School Life',
     
     // Student Overview
     'overview.title': 'Student Overview',
@@ -40,6 +42,10 @@ const translations = {
     'overview.approval': 'Teacher Approval',
     'overview.feedback': 'Positive feedback',
     
+    // Skills and Development
+    'page.title': 'Skill and Development',
+    'skill.subtitle': 'Academic progress and social development',
+
     // Academic Skills
     'academic.title': 'Academic Skills Assessment',
     'academic.subtitle': "Vincy's learning progress and readiness",
@@ -74,8 +80,10 @@ const translations = {
     'artwork.painting': 'Painting',
     'artwork.sculpture': 'Sculpture',
     'artwork.dancing': 'Dancing',
-    'artwork.dancing.performance': 'Dancing performance 2025',
-    'artwork.dancing.performance.desc': 'Participate in Annual Performance of Petite Princess Academy of Dance in Sai Wan Ho Civic Centre',
+    'artwork.dancing.performance.2025': 'Dancing performance 2025',
+    'artwork.dancing.performance.2025.desc': 'Participated in Annual Performance of Petite Princess Academy of Dance in Sai Wan Ho Civic Centre',
+    'artwork.dancing.performance.2024': 'Christmas performance 2024',
+    'artwork.dancing.performance.2024.desc': 'Participated in School Christimas performance in Hysan Place',
     'artwork.dancing.prize': 'Prize Presentation Ceremony',
     'artwork.dancing.prize.desc': 'Obtain Honorable Award from Petite Princess Academy of Dance',
     
@@ -120,8 +128,13 @@ const translations = {
     'interest.music.desc': 'Loves singing songs and moving to music. Shows good rhythm and enjoys music activities.',
     'interest.outdoor': 'Outdoor Exploration',
     'interest.outdoor.desc': 'Enjoys nature walks, collecting leaves and rocks, and learning about plants and animals.',
-    "interest.cooking": 'Cooking',
-    "interest.cooking.desc": 'Enjoys cooking food and share with family and friends',
+    'interest.cooking': 'Cooking',
+    'interest.cooking.desc': 'Enjoys cooking food and share with family and friends',
+    'interest.cycling': 'Cycling',
+    'interest.cycling.desc': 'Enjoys riding balance bike with little sister',
+    'interest.dancing': 'Dancing',
+    'interest.dancing.desc': 'Enjoys dancing and performing on stage',
+
     
     // Categories
     'category.science': 'Science',
@@ -134,9 +147,10 @@ const translations = {
     // Teacher Comments
     'comments.title': 'Teacher Observations',
     'comments.subtitle': 'Professional observations and feedback',
+    'teacher.said': 'Teacher said about Vincy',
     'teacher.kindergarten': 'Kindergarten Teacher',
     'teacher.art': 'Art Teacher',
-    'teacher.comment1': 'Emma is a delightful student who brings enthusiasm and curiosity to every learning activity. She demonstrates excellent academic readiness and social skills that will serve her well in first grade.',
+    'teacher.comment1': 'Vincy attends class with focused listening, actively participates in classroom discussions, and shows strong learning interest. She particularly enjoys participating in dance and music activities, and can corrdinate movements well. During performance, she shows dedication and self-confidence when performing in front of others',
     'teacher.comment2': 'Emma shows remarkable creativity and attention to detail in her artwork. She experiments with different materials confidently and always approaches art projects with excitement and imagination.',
     
     // Highlights
@@ -153,7 +167,19 @@ const translations = {
     'student.age': 'Age',
     'student.grade': 'Kindergarten 3',
     'student.school': 'Wayfoong Nursery School',
-    'footer.message': "Portfolio prepared with love for Vincy's educational journey 💫"
+    'footer.message': "Portfolio prepared with love for Vincy's educational journey 💫",
+
+
+    // Awards
+    // TODO...
+    'awards.title': 'Awards & Certificates',
+    'awards.subtitle': 'Recognition and achievements',
+
+    // Life
+    // TODO...
+
+    'personal.title': 'Personal & School Life',
+    'personal.subtitle': 'Snapshots of daily life and school activities',
   },
   zh: {
     // Navigation
@@ -161,14 +187,16 @@ const translations = {
     'nav.next': '下一頁',
     'nav.page': '第',
     'nav.of': '頁，共',
+    'nav.end': '頁',
     
     // Page Titles
     'page.overview': '概覽',
-    'page.academic': '學術能力',
+    'page.skills': '技能與發展',
     'page.creative': '創作作品',
-    'page.social': '社交技能',
     'page.interests': '興趣愛好',
     'page.comments': '老師評語',
+    'page.awards': '獎項與證書',
+    'page.personal': '個人與校園生活',
     
     // Student Overview
     'overview.title': '學生概覽',
@@ -182,6 +210,10 @@ const translations = {
     'overview.expression': '創意表達',
     'overview.approval': '教師認可',
     'overview.feedback': '正面回饋',
+
+    // Skills and Development
+    'page.title': '技能與發展',
+    'skill.subtitle': '學術進步與社交發展',
     
     // Academic Skills
     'academic.title': '學術技能評估',
@@ -217,8 +249,10 @@ const translations = {
     'artwork.painting': '彩繪',
     'artwork.sculpture': '雕塑',
     'artwork.dancing': '跳舞',
-    'artwork.dancing.performance': '跳舞表演 2025',
-    'artwork.dancing.performance.desc': '參加在西灣河文娛中心舉行之2025年度小公主舞蹈學院周年大匯演暨頒獎典禮',
+    'artwork.dancing.performance.2025': '跳舞表演 2025',
+    'artwork.dancing.performance.2025.desc': '參加在西灣河文娛中心舉行之2025年度小公主舞蹈學院周年大匯演暨頒獎典禮',
+    'artwork.dancing.performance.2024': '跳舞表演 2024',
+    'artwork.dancing.performance.2024.desc': '參加在希慎廣場舉行之聖誕歌舞表演',
     'artwork.dancing.prize': '小公主舞蹈學院',
     'artwork.dancing.prize.desc': '獲得卓越表現大獎',
     
@@ -266,7 +300,10 @@ const translations = {
     'interest.outdoor.desc': '享受自然散步，收集樹葉和石頭，學習植物和動物知識。',
     'interest.cooking': '料理',
     'interest.cooking.desc': '喜愛煮食和分享給家人與朋友',
-    
+    'interest.cycling': '運動',
+    'interest.cycling.desc': '喜歡跟妹妹踩平衡車',
+    'interest.dancing': '跳舞',
+    'interest.dancing.desc': '喜愛跳舞和在舞台上表演',
     // Categories
     'category.science': '科學',
     'category.arts': '藝術',
@@ -278,9 +315,10 @@ const translations = {
     // Teacher Comments
     'comments.title': '教師觀察',
     'comments.subtitle': '專業觀察和回饋',
+    'teacher.said': '老師眼中的穎珊',
     'teacher.kindergarten': '幼稚園老師',
     'teacher.art': '美術老師',
-    'teacher.comment1': '艾瑪是一位令人愉快的學生，為每個學習活動帶來熱情和好奇心。她展現出優秀的學術準備和社交技能，這將在一年級很好地為她服務。',
+    'teacher.comment1': '穎珊上課專心聽講，積極參與課堂討論，表現出濃厚的學習與趣。她尤其喜愛參與舞蹈律動活動，表現出色。進行表演時，她表現投入，並能自信地以歌舞於他人面前表演，建議家長可持續培養，發展其藝術專長。',
     'teacher.comment2': '艾瑪在她的藝術作品中表現出卓越的創造力和對細節的注意。她自信地嘗試不同材料，總是以興奮和想像力接近藝術項目。',
     
     // Highlights
@@ -297,7 +335,17 @@ const translations = {
     'student.age': '年齡',
     'student.grade': '幼稚園高班',
     'student.school': '滙豐幼兒學校',
-    'footer.message': '用愛為穎珊的教育旅程準備的作品集 💫'
+    'footer.message': '用愛為穎珊的教育旅程準備的作品集 💫',
+
+    // Awards
+    // TODO...
+    'awards.title': '獎項與證書',
+    'awards.subtitle': '認可與成就',
+
+    // Life
+    // TODO...
+    'personal.title': '個人與校園生活',
+    'personal.subtitle': '回憶與日常時光',
   }
 };
 
