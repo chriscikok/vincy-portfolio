@@ -1,6 +1,7 @@
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
 
+import { useLanguage } from '../contexts/LanguageContext';
 interface Comment {
   teacher: string;
   role: string;
@@ -14,10 +15,12 @@ interface TeacherCommentsProps {
 }
 
 export function TeacherComments({ comments }: TeacherCommentsProps) {
+
+    const { t } = useLanguage();
   return (
     <Card className="p-4 md:p-6">
       <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-        💬 Teacher Observations
+        💬 {t('teacher.said')}
       </h2>
       
       <div className="space-y-4">

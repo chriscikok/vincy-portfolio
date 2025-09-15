@@ -3,13 +3,15 @@ import './styles/globals.css'
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { PageNavigation } from './components/PageNavigation';
 import { StudentHeader } from './components/StudentHeader';
-import { SkillsAssessment } from './components/SkillsAssessment';
+import { AwardsAndCertificates } from './components/AwardsAndCertificates';
+import { PersonalSchoolLife } from './components/PersonalSchoolLife';
+import { ComprehensiveSkills } from './components/ComprehensiveSkills';
 import { PortfolioPage } from './components/PortfolioPage';
 import { CreativeShowcase } from './components/CreativeShowcase';
-import { SocialSkills } from './components/SocialSkills';
 import { InterestsHobbies } from './components/InterestsHobbies';
 import { TeacherComments } from './components/TeacherComments';
 import { Card } from './components/ui/card';
+
 
 function PortfolioApp() {
   const [currentPage, setCurrentPage] = useState(0)
@@ -54,32 +56,23 @@ function PortfolioApp() {
 
   const artworks = [
     {
-      title: t('artwork.dancing.prize'),
-      type: t('artwork.dancing'),
-      description: t('artwork.dancing.prize.desc'),
-      images: ["https://d10ir6fnh9pb6o.cloudfront.net/Vincy_Aug_Performance_1.jpeg",
-        "https://d10ir6fnh9pb6o.cloudfront.net/Vincy_Aug_Performance_2.jpeg","https://d10ir6fnh9pb6o.cloudfront.net/Vincy_Aug_Performance_3.jpeg",
-      ],
-      date: "Aug 2025",
-      mediaType: "image"
-    },
-    {
-      title: t('artwork.dancing.performance'),
+      title: t('artwork.dancing.performance.2025'),
       type: "Video",
-      description: t('artwork.dancing.performance.desc'),
+      description: t('artwork.dancing.performance.2025.desc'),
       images: ["https://d10ir6fnh9pb6o.cloudfront.net/IMG_6882.png"],
       videoUrl: "https://d10ir6fnh9pb6o.cloudfront.net/IMG_7036.mp4",
       date: "August 2025",
-      mediaType: "video"
+      mediaType: 'video'
     },
     {
-      title: t('artwork.dinosaur'),
-      type: t('artwork.sculpture'),
-      description: t('artwork.dinosaur.desc'),
-      images: ["https://images.unsplash.com/flagged/photo-1551277816-36355be656eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGFydCUyMGRyYXdpbmclMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NTcxMTU5NDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"],
-      date: "February 2025",
-      mediaType: "image"
-    }
+      title: t('artwork.dancing.performance.2024'),
+      type: "Video",
+      description: t('artwork.dancing.performance.2024.desc'),
+      images: ["https://d10ir6fnh9pb6o.cloudfront.net/portfolio/artwork/Vincy_xmas_performance_2024.jpeg"],
+      videoUrl: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/artwork/Vincy_xmas_performance_2024.mp4",
+      date: "December 2024",
+      mediaType: 'video'
+    },
   ];
 
   const socialTraits = [
@@ -113,57 +106,145 @@ function PortfolioApp() {
     {
       name: t('interest.cooking'),
       description: t('interest.cooking.desc'),
-      image: "https://d10ir6fnh9pb6o.cloudfront.net/vincy_hobbies_cooking.jpeg",
+      image: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/interests/Vincy_cooking.jpeg",
       category: t('category.science')
     },
     {
-      name: t('interest.art'),
-      description: t('interest.art.desc'),
-      image: "https://images.unsplash.com/photo-1544772711-57da9c7368fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraW5kZXJnYXJ0ZW4lMjBjbGFzc3Jvb20lMjBhY3Rpdml0aWVzfGVufDF8fHx8MTc1NzEyMjIzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      name: t('interest.cycling'),
+      description: t('interest.cycling.desc'),
+      image: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/interests/Vincy_cycling_with_sister.jpeg",
+      category: t('category.sports')
+    },
+    {
+      name: t('interest.dancing'),
+      description: t('interest.dancing.desc'),
+      image: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/interests/Vincy_dancing.jpeg",
       category: t('category.arts')
     },
-    {
-      name: t('interest.reading'),
-      description: t('interest.reading.desc'),
-      image: "https://images.unsplash.com/photo-1544772711-57da9c7368fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraW5kZXJnYXJ0ZW4lMjBjbGFzc3Jvb20lMjBhY3Rpdml0aWVzfGVufDF8fHx8MTc1NzEyMjIzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      category: t('category.reading')
-    },
-    {
-      name: t('interest.building'),
-      description: t('interest.building.desc'),
-      image: "https://images.unsplash.com/photo-1544772711-57da9c7368fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraW5kZXJnYXJ0ZW4lMjBjbGFzc3Jvb20lMjBhY3Rpdml0aWVzfGVufDF8fHx8MTc1NzEyMjIzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      category: t('category.games')
-    },
-    {
-      name: t('interest.music'),
-      description: t('interest.music.desc'),
-      image: "https://images.unsplash.com/photo-1544772711-57da9c7368fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraW5kZXJnYXJ0ZW4lMjBjbGFzc3Jvb20lMjBhY3Rpdml0aWVzfGVufDF8fHx8MTc1NzEyMjIzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      category: t('category.music')
-    },
-    {
-      name: t('interest.outdoor'),
-      description: t('interest.outdoor.desc'),
-      image: "https://images.unsplash.com/photo-1544772711-57da9c7368fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraW5kZXJnYXJ0ZW4lMjBjbGFzc3Jvb20lMjBhY3Rpdml0aWVzfGVufDF8fHx8MTc1NzEyMjIzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      category: t('category.science')
-    }
   ];
 
   const teacherComments = [
     {
-      teacher: "Ms. Sarah Johnson",
+      teacher: "Ms. Chan",
       role: t('teacher.kindergarten'),
       comment: t('teacher.comment1'),
-      highlights: [t('highlight.progress'), t('highlight.social'), t('highlight.creative'), t('highlight.helpful')],
-      date: "May 2025"
+      highlights: [t('highlight.talent')],
+      date: "Aug 2025"
+    },
+    
+  ];
+  const awards = [
+    {
+      title: "The Commonwealth Society of Teachers of Dancing",
+      category: "dancing",
+      description: "Passed Pre Theatrical & Performing Arts with Honours Plus.",
+      date: "Sep 2024",
+      image: "",
+      badge: "🏆",
+      files: [
+        {
+          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_CSTD_Certificate_20240930.pdf",
+          type: "pdf" as const,
+          name: "Official Certificate with Examiner Report"
+        }
+      ]
     },
     {
-      teacher: "Mr. David Chen",
-      role: t('teacher.art'),
-      comment: t('teacher.comment2'),
-      highlights: [t('highlight.expression'), t('highlight.detail'), t('highlight.experiment'), t('highlight.talent')],
-      date: "April 2025"
+      title: "Petite Princess Academy of Dance",
+      category: "dancing",
+      description: "Received Honorable Award for outstanding performance.",
+      date: "Aug 2025",
+      image: "",
+      badge: "🏆",
+      files: [
+        {
+          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_Petite_Princess_2025_Award.jpeg",
+          type: "image" as const,
+          name: "Official Certificate"
+        }
+      ]
+    },
+    {
+      title: "LCM HK Speech Festival",
+      category: "speech",
+      description: "Received Merit for 9th LCM Hong Kong Speech Festival.",
+      date: "May 2025",
+      image: "",
+      badge: "💬",
+      files: [
+        {
+          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_LCM_HK_Speech_Festival_20250503.pdf",
+          type: "pdf" as const,
+          name: "Official Certificate with Examiner Report"
+        }
+      ]
+    },
+    {
+      title: "GASCA",
+      category: "speech",
+      description: "Received Distinction Award for 57th English recitation competition.",
+      date: "Jul 2024",
+      image: "",
+      badge: "💬",
+      files: [
+        {
+          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_GASCA_international_competition.pdf",
+          type: "pdf" as const,
+          name: "Official Certificate"
+        }
+      ]
+    },
+    {
+      title: "British Council",
+      category: "academic",
+      description: "Completed phonic stage 1",
+      date: "Jan 2025",
+      image: "",
+      badge: "👍",
+      files: [
+        {
+          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_British_Council_Phonics_Stage_1.pdf",
+          type: "pdf" as const,
+          name: "Completion Certificate"
+        }
+      ]
+    },
+    {
+      title: "British Council",
+      category: "academic",
+      description: "Completed phonic stage 2",
+      date: "Jun 2025",
+      image: "",
+      badge: "👍",
+      files: [
+        {
+          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_British_Council_Phonics_Stage_2.pdf",
+          type: "pdf" as const,
+          name: "Completion Certificate"
+        }
+      ]
     }
   ];
+
+  const personalMemories = [
+    {
+      title: "Family portrait day",
+      description: "Capturing smiles and joy with family in the studio.",
+      images: [
+        "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/life/Vincy_with_her_family.jpeg",
+        "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/life/Vincy_with_sister.jpeg",
+        "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/life/Vincy_kiss_her_sister.jpeg",
+      ],
+      date: "November 2024",
+      location: "Studio",
+      category: "daily",
+      participants: ["Father", "Mother", "Sister"],
+      mood: "😘"
+    },
+    
+  ];
+
+  
 
   const pages = [
     {
@@ -203,19 +284,15 @@ function PortfolioApp() {
       ) 
     },
     {
-      title: t('academic.title'),
-      subtitle: t('academic.subtitle'),
-      content: <SkillsAssessment skills={skills} />
+      title: t('page.title'),
+      subtitle: t('skill.subtitle'),
+      content: <ComprehensiveSkills academicSkills={skills} socialTraits={socialTraits} />
     },{
       title: t('creative.title'),
       subtitle: t('creative.subtitle'),
       content: <CreativeShowcase artworks={artworks} />
     },
     {
-      title: t('social.title'),
-      subtitle: t('social.subtitle'),
-      content: <SocialSkills traits={socialTraits} />
-    },{
       title: t('interests.title'),
       subtitle: t('interests.subtitle'),
       content: <InterestsHobbies interests={interests} />
@@ -224,8 +301,20 @@ function PortfolioApp() {
       title: t('comments.title'),
       subtitle: t('comments.subtitle'),
       content: <TeacherComments comments={teacherComments} />
+    },
+    {
+      title: t('awards.title'),
+      subtitle: t('awards.subtitle'),
+      content: <AwardsAndCertificates awards={awards} />
+    },
+    {
+      title: t('personal.title'),
+      subtitle: t('personal.subtitle'),
+      content: <PersonalSchoolLife memories={personalMemories} />
     }
   ];
+
+  
 
   
 
@@ -250,7 +339,7 @@ function PortfolioApp() {
           currentPage={currentPage}
           totalPages={pages.length}
           onPageChange={handlePageChange}
-          pageTitle={pages[currentPage].title}
+          /*pageTitle={pages[currentPage].title}*/
         />
 
         <PortfolioPage
@@ -260,10 +349,18 @@ function PortfolioApp() {
           {pages[currentPage].content}
           
           {/* Footer */}
-          <div className="text-center py-6 mt-8">
-            <p className="text-gray-500 text-sm">
+          <div className="text-center py-6 mt-8 border-t border-gray-200">
+            <p className="text-gray-500 text-sm mb-2">
               {t('footer.message')}
             </p>
+            <div className="text-gray-400 text-xs space-y-1">
+              <p>© 2025 Vincy Kok Portfolio. All rights reserved.</p>
+              <p>
+                Built with React & Tailwind CSS | 
+                <span className="mx-1">•</span>
+                Designed for educational purposes
+              </p>
+            </div>
           </div>
         </PortfolioPage>
     </div>

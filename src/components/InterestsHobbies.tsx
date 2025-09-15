@@ -23,7 +23,7 @@ export function InterestsHobbies({ interests }: InterestsHobbiesProps) {
       [t('category.science')]: 'bg-blue-100 text-blue-800',
       [t('category.music')]: 'bg-pink-100 text-pink-800',
       [t('category.reading')]: 'bg-green-100 text-green-800',
-      [t('category.games')]: 'bg-yellow-100 text-yellow-800',
+      [t('category.sport')]: 'bg-yellow-100 text-yellow-800',
     };
     return colors[category] || 'bg-gray-100 text-gray-800';
   };
@@ -37,9 +37,9 @@ export function InterestsHobbies({ interests }: InterestsHobbiesProps) {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {interests.map((interest, index) => (
           <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
-            <div className="h-32 sm:h-40 bg-gray-100">
+            <div className="h-80 sm:h-60 bg-gray-100">
               <ImageWithFallback
-                src={interest.image}
+                src={typeof interest.image === 'string' ? interest.image : (interest.image as string)}
                 alt={interest.name}
                 className="w-full h-full object-cover"
               />

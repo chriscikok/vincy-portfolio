@@ -1,7 +1,6 @@
 import { Card } from './ui/card';
 import { ImageWithFallback } from './utils/ImageWithFallback';
 import { Badge } from './ui/badge';
-import { useLanguage } from '../contexts/LanguageContext';
 import { Play, Video, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -12,7 +11,7 @@ interface CreativeWork {
   description: string;
   images: string[];  // Changed from single image to array of images
   date: string;
-  mediaType?: string;
+  mediaType?: string; // 'image' or 'video'
   videoUrl?: string;
 }
 
@@ -21,7 +20,7 @@ interface CreativeShowcaseProps {
 }
 
 export function CreativeShowcase({ artworks }: CreativeShowcaseProps) {
-  const { t } = useLanguage();
+  /*const { t } = useLanguage();*/
   const [playingVideo, setPlayingVideo] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<Record<number, number>>({});
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -78,18 +77,27 @@ export function CreativeShowcase({ artworks }: CreativeShowcaseProps) {
   };
 
   return (
-    <Card className="p-4 md:p-6">
-      <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-        🎨 {t('creative.title')}
-      </h2>
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <Card className="p-4 md:p-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
         {artworks.map((artwork, artworkIndex) => {
           const currentIndex = currentImageIndex[artworkIndex] || 0;
           const hasMultipleImages = artwork.images.length > 1;
           
           return (
-            <div key={artworkIndex} className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+            <motion.div
+              key={artworkIndex}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: artworkIndex * 0.1 }}
+              whileHover={{ scale: 1.02 }}
+              className="group"
+            >
+              <div className="bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:border-purple-300 transition-all duration-300">
               <div 
                 className="aspect-square bg-gray-100 relative overflow-hidden"
                 onTouchStart={onTouchStart}
@@ -120,7 +128,7 @@ export function CreativeShowcase({ artworks }: CreativeShowcaseProps) {
                         <ImageWithFallback
                           src={artwork.images[currentIndex]}
                           alt={`${artwork.title} - Image ${currentIndex + 1}`}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </motion.div>
                     </AnimatePresence>
@@ -130,13 +138,13 @@ export function CreativeShowcase({ artworks }: CreativeShowcaseProps) {
                       <>
                         <button
                           onClick={(e) => handlePrevImage(artworkIndex, e)}
-                          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
+                          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
                         >
                           <ChevronLeft className="w-4 h-4 text-gray-800" />
                         </button>
                         <button
                           onClick={(e) => handleNextImage(artworkIndex, e)}
-                          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
+                          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
                         >
                           <ChevronRight className="w-4 h-4 text-gray-800" />
                         </button>
@@ -203,9 +211,11 @@ export function CreativeShowcase({ artworks }: CreativeShowcaseProps) {
                 <p className="text-xs text-gray-500">{artwork.date}</p>
               </div>
             </div>
+            </motion.div>
           );
         })}
-      </div>
-    </Card>
+        </div>
+      </Card>
+    </motion.div>
   );
 }

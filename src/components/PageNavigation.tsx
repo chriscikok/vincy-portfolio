@@ -1,25 +1,26 @@
 import { Button } from './ui/button';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LanguageToggle } from './LanguageToggle';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu';
 
 interface PageNavigationProps {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
-  pageTitle: string;
 }
 
-export function PageNavigation({ currentPage, totalPages, onPageChange, pageTitle }: PageNavigationProps) {
+export function PageNavigation({ currentPage, totalPages, onPageChange }: PageNavigationProps) {
   const { t } = useLanguage();
   
   const pages = [
     t('page.overview'),
-    t('page.academic'),
+    t('page.skills'),
     t('page.creative'),
-    t('page.social'),
     t('page.interests'),
-    t('page.comments')
+    t('page.comments'),
+    t('page.awards'),
+    t('page.personal')
   ];
 
   return (
@@ -39,9 +40,9 @@ export function PageNavigation({ currentPage, totalPages, onPageChange, pageTitl
           </Button>
           
           <div className="text-center flex-1 mx-4">
-            <div className="font-semibold text-gray-800">{pageTitle}</div>
+            {/*<div className="font-semibold text-gray-800">{pageTitle}</div>*/}
             <div className="text-sm text-gray-500">
-              {t('nav.page')} {currentPage + 1} {t('nav.of')} {totalPages}
+              {t('nav.page')} {currentPage + 1} {t('nav.of')} {totalPages} {t('nav.end')}
             </div>
           </div>
 
@@ -69,18 +70,48 @@ export function PageNavigation({ currentPage, totalPages, onPageChange, pageTitl
         </div>
 
         {/* Desktop Page Tabs */}
-        <div className="hidden md:flex gap-2 overflow-x-auto">
-          {pages.map((page, index) => (
-            <Button
-              key={index}
-              variant={currentPage === index ? "default" : "ghost"}
-              size="sm"
-              onClick={() => onPageChange(index)}
-              className="whitespace-nowrap flex-shrink-0"
-            >
-              {page}
-            </Button>
-          ))}
+        <div className="hidden lg:block">
+          <div className="flex flex-wrap gap-2 justify-center">
+            {pages.map((page, index) => (
+              <Button
+                key={index}
+                variant={currentPage === index ? "default" : "ghost"}
+                size="sm"
+                onClick={() => onPageChange(index)}
+                className="whitespace-nowrap text-xs px-3 py-2 min-w-0 flex-shrink hover:scale-105 transition-transform duration-200"
+              >
+                {page}
+              </Button>
+            ))}
+          </div>
+        </div>
+
+        {/* Tablet Dropdown Menu */}
+        <div className="hidden md:block lg:hidden">
+          <div className="flex justify-center">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm" className="flex items-center gap-2">
+                  <Menu className="w-4 h-4" />
+                  {pages[currentPage]}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="w-56">
+                {pages.map((page, index) => (
+                  <DropdownMenuItem
+                    key={index}
+                    onClick={() => onPageChange(index)}
+                    className={`cursor-pointer ${
+                      currentPage === index ? 'bg-blue-50 text-blue-700 font-medium' : ''
+                    }`}
+                  >
+                    <span className="mr-2">{currentPage === index ? '●' : '○'}</span>
+                    {page}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
 
         {/* Mobile Page Dots */}
@@ -89,11 +120,12 @@ export function PageNavigation({ currentPage, totalPages, onPageChange, pageTitl
             <button
               key={index}
               onClick={() => onPageChange(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-200 ${
+              className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
                 currentPage === index 
-                  ? 'bg-blue-500 w-6' 
-                  : 'bg-gray-300'
+                  ? 'bg-gradient-to-r from-blue-500 to-purple-500 w-8' 
+                  : 'bg-gray-300 hover:bg-gray-400'
               }`}
+              aria-label={`Go to ${pages[index]}`}
             />
           ))}
         </div>
