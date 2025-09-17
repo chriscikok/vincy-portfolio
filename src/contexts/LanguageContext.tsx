@@ -31,7 +31,7 @@ const translations = {
     
     // Student Overview
     'overview.title': 'Student Overview',
-    'overview.subtitle': 'Get to know Vinky Kok',
+    'overview.subtitle': 'Get to know Vincy Kok',
     'overview.ready': 'Ready for the next adventure in learning! 🌟',
     'overview.summary': 'Portfolio Summary',
     'overview.highest': 'Highest Skill Level',
