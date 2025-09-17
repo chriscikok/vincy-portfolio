@@ -13,7 +13,7 @@ interface LifeMemory {
   images: string[];
   date: string;
   location: string;
-  category: string; //'daily' | 'events' | 'trips' | 'friends' | 'learning' | 'fun';
+  category: 'daily' | 'events' | 'trips' | 'friends' | 'learning' | 'fun';
   participants?: string[];
   mood: string;
 }

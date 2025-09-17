@@ -62,7 +62,7 @@ function PortfolioApp() {
       images: ["https://d10ir6fnh9pb6o.cloudfront.net/IMG_6882.png"],
       videoUrl: "https://d10ir6fnh9pb6o.cloudfront.net/IMG_7036.mp4",
       date: "August 2025",
-      mediaType: 'video'
+      mediaType: 'video' as const
     },
     {
       title: t('artwork.dancing.performance.2024'),
@@ -71,7 +71,7 @@ function PortfolioApp() {
       images: ["https://d10ir6fnh9pb6o.cloudfront.net/portfolio/artwork/Vincy_xmas_performance_2024.jpeg"],
       videoUrl: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/artwork/Vincy_xmas_performance_2024.mp4",
       date: "December 2024",
-      mediaType: 'video'
+      mediaType: 'video' as const
     },
   ];
 
@@ -135,21 +135,6 @@ function PortfolioApp() {
   ];
   const awards = [
     {
-      title: "The Commonwealth Society of Teachers of Dancing",
-      category: "dancing",
-      description: "Passed Pre Theatrical & Performing Arts with Honours Plus.",
-      date: "Sep 2024",
-      image: "",
-      badge: "🏆",
-      files: [
-        {
-          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_CSTD_Certificate_20240930.pdf",
-          type: "pdf" as const,
-          name: "Official Certificate with Examiner Report"
-        }
-      ]
-    },
-    {
       title: "Petite Princess Academy of Dance",
       category: "dancing",
       description: "Received Honorable Award for outstanding performance.",
@@ -164,6 +149,37 @@ function PortfolioApp() {
         }
       ]
     },
+    {
+      title: "Royal Academy of Dance",
+      category: "dancing",
+      description: "Completed Demoonstration class for Pre-School Dance Level 2",
+      date: "May 2025",
+      image: "",
+      badge: "🏆",
+      files: [
+        {
+          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_RAD_PSD2_20250515.pdf",
+          type: "pdf" as const,
+          name: "Official Certificate"
+        }
+      ]
+    },
+    {
+      title: "The Commonwealth Society of Teachers of Dancing",
+      category: "dancing",
+      description: "Passed Pre Theatrical & Performing Arts with Honours Plus.",
+      date: "Sep 2024",
+      image: "",
+      badge: "🏆",
+      files: [
+        {
+          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_CSTD_Certificate_20240930.pdf",
+          type: "pdf" as const,
+          name: "Official Certificate with Examiner Report"
+        }
+      ]
+    },
+    
     {
       title: "LCM HK Speech Festival",
       category: "speech",
@@ -237,7 +253,7 @@ function PortfolioApp() {
       ],
       date: "November 2024",
       location: "Studio",
-      category: "daily",
+      category: "daily" as const,
       participants: ["Father", "Mother", "Sister"],
       mood: "😘"
     },

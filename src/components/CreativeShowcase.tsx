@@ -11,7 +11,7 @@ interface CreativeWork {
   description: string;
   images: string[];  // Changed from single image to array of images
   date: string;
-  mediaType?: string; // 'image' or 'video'
+  mediaType?: 'image' | 'video'; // 'image' | 'video'
   videoUrl?: string;
 }
 
