@@ -12,6 +12,8 @@ import { InterestsHobbies } from './components/InterestsHobbies';
 import { TeacherComments } from './components/TeacherComments';
 import { Card } from './components/ui/card';
 
+const ASSETS_URL = import.meta.env.VITE_ASSETS_URL;
+
 
 function PortfolioApp() {
   const [currentPage, setCurrentPage] = useState(0)
@@ -23,7 +25,7 @@ function PortfolioApp() {
     grade: "Kindergarten 3",
     school: "Wayfoong Nursery School",
     favoriteColor: "#ff6b9d",
-    photo: "https://d10ir6fnh9pb6o.cloudfront.net/VincyKok.png"
+    photo: ASSETS_URL + "/VincyKok.png"
   };
 
   const skills = [
@@ -59,8 +61,8 @@ function PortfolioApp() {
       title: t('artwork.dancing.performance.2025'),
       type: "Video",
       description: t('artwork.dancing.performance.2025.desc'),
-      images: ["https://d10ir6fnh9pb6o.cloudfront.net/IMG_6882.png"],
-      videoUrl: "https://d10ir6fnh9pb6o.cloudfront.net/IMG_7036.mp4",
+      images: [ASSETS_URL + "/IMG_6882.png"],
+      videoUrl: ASSETS_URL + "/IMG_7036.mp4",
       date: "August 2025",
       mediaType: 'video' as const
     },
@@ -68,8 +70,8 @@ function PortfolioApp() {
       title: t('artwork.dancing.performance.2024'),
       type: "Video",
       description: t('artwork.dancing.performance.2024.desc'),
-      images: ["https://d10ir6fnh9pb6o.cloudfront.net/portfolio/artwork/Vincy_xmas_performance_2024.jpeg"],
-      videoUrl: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/artwork/Vincy_xmas_performance_2024.mp4",
+      images: [ASSETS_URL + "/portfolio/artwork/Vincy_xmas_performance_2024.jpeg"],
+      videoUrl: ASSETS_URL + "/portfolio/artwork/Vincy_xmas_performance_2024.mp4",
       date: "December 2024",
       mediaType: 'video' as const
     },
@@ -106,19 +108,19 @@ function PortfolioApp() {
     {
       name: t('interest.cooking'),
       description: t('interest.cooking.desc'),
-      image: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/interests/Vincy_cooking.jpeg",
+      image: ASSETS_URL + "/portfolio/interests/Vincy_cooking.jpeg",
       category: t('category.science')
     },
     {
       name: t('interest.cycling'),
       description: t('interest.cycling.desc'),
-      image: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/interests/Vincy_cycling_with_sister.jpeg",
+      image: ASSETS_URL + "/portfolio/interests/Vincy_cycling_with_sister.jpeg",
       category: t('category.sports')
     },
     {
       name: t('interest.dancing'),
       description: t('interest.dancing.desc'),
-      image: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/interests/Vincy_dancing.jpeg",
+      image: ASSETS_URL + "/portfolio/interests/Vincy_dancing.jpeg",
       category: t('category.arts')
     },
   ];
@@ -143,7 +145,7 @@ function PortfolioApp() {
       badge: "🏆",
       files: [
         {
-          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_Petite_Princess_2025_Award.jpeg",
+          url: ASSETS_URL + "/portfolio/awards/Vincy_Petite_Princess_2025_Award.jpeg",
           type: "image" as const,
           name: "Official Certificate"
         }
@@ -158,7 +160,7 @@ function PortfolioApp() {
       badge: "🏆",
       files: [
         {
-          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_RAD_PSD2_20250515.pdf",
+          url: ASSETS_URL + "/portfolio/awards/Vincy_RAD_PSD2_20250515.pdf",
           type: "pdf" as const,
           name: "Official Certificate"
         }
@@ -173,7 +175,7 @@ function PortfolioApp() {
       badge: "🏆",
       files: [
         {
-          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_CSTD_Certificate_20240930.pdf",
+          url: ASSETS_URL + "/portfolio/awards/Vincy_CSTD_Certificate_20240930.pdf",
           type: "pdf" as const,
           name: "Official Certificate with Examiner Report"
         }
@@ -189,7 +191,7 @@ function PortfolioApp() {
       badge: "💬",
       files: [
         {
-          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_LCM_HK_Speech_Festival_20250503.pdf",
+          url: ASSETS_URL + "/portfolio/awards/Vincy_LCM_HK_Speech_Festival_20250503.pdf",
           type: "pdf" as const,
           name: "Official Certificate with Examiner Report"
         }
@@ -204,7 +206,7 @@ function PortfolioApp() {
       badge: "💬",
       files: [
         {
-          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_GASCA_international_competition.pdf",
+          url: ASSETS_URL + "/portfolio/awards/Vincy_GASCA_international_competition.pdf",
           type: "pdf" as const,
           name: "Official Certificate"
         }
@@ -219,7 +221,7 @@ function PortfolioApp() {
       badge: "👍",
       files: [
         {
-          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_British_Council_Phonics_Stage_1.pdf",
+          url: ASSETS_URL + "/portfolio/awards/Vincy_British_Council_Phonics_Stage_1.pdf",
           type: "pdf" as const,
           name: "Completion Certificate"
         }
@@ -234,7 +236,7 @@ function PortfolioApp() {
       badge: "👍",
       files: [
         {
-          url: "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/awards/Vincy_British_Council_Phonics_Stage_2.pdf",
+          url: ASSETS_URL + "/portfolio/awards/Vincy_British_Council_Phonics_Stage_2.pdf",
           type: "pdf" as const,
           name: "Completion Certificate"
         }
@@ -247,9 +249,9 @@ function PortfolioApp() {
       title: "Family portrait day",
       description: "Capturing smiles and joy with family in the studio.",
       images: [
-        "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/life/Vincy_with_her_family.jpeg",
-        "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/life/Vincy_with_sister.jpeg",
-        "https://d10ir6fnh9pb6o.cloudfront.net/portfolio/life/Vincy_kiss_her_sister.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_with_her_family.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_with_sister.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_kiss_her_sister.jpeg",
       ],
       date: "November 2024",
       location: "Studio",
