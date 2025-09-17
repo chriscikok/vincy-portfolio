@@ -1,6 +1,7 @@
 import { ImageWithFallback } from './utils/ImageWithFallback';
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
+import { MapPin, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface StudentHeaderProps {
@@ -16,6 +17,18 @@ interface StudentHeaderProps {
 
 export function StudentHeader({ student }: StudentHeaderProps) {
   const { t } = useLanguage();
+
+  const handleLocationClick = () => {
+    const query = encodeURIComponent(`${student.school} school`);
+    const googleMapsUrl = `https://www.google.com/maps/search/${query}`;
+    window.open(googleMapsUrl, '_blank');
+  };
+
+  const handleWebsiteClick = () => {
+    // You can replace this with the actual school website URL
+    const schoolWebsiteUrl = 'https://wfns.hkcschild.edu.hk/?lang=en'; // Example URL
+    window.open(schoolWebsiteUrl, '_blank');
+  };
   
   return (
     <Card className="p-4 md:p-6 bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200">
@@ -43,9 +56,28 @@ export function StudentHeader({ student }: StudentHeaderProps) {
             <Badge variant="secondary" className="bg-purple-100 text-purple-800 text-sm">
               {t('student.grade')}
             </Badge>
-            <Badge variant="secondary" className="bg-green-100 text-green-800 text-sm">
-              {t('student.school')}
-            </Badge>
+            <div className="flex items-center gap-1">
+              <Badge 
+                variant="secondary" 
+                className="bg-green-100 text-green-800 text-sm flex items-center gap-1"
+              >
+                {t('student.school')}
+              </Badge>
+              <button
+                onClick={handleLocationClick}
+                className="p-1 rounded-full bg-green-100 hover:bg-green-200 text-green-800 transition-colors"
+                title={`View ${student.school} location on Google Maps`}
+              >
+                <MapPin className="w-3 h-3" />
+              </button>
+              <button
+                onClick={handleWebsiteClick}
+                className="p-1 rounded-full bg-green-100 hover:bg-green-200 text-green-800 transition-colors"
+                title={`Visit ${student.school} website`}
+              >
+                <Globe className="w-3 h-3" />
+              </button>
+            </div>
           </div>
           <p className="text-gray-600 text-sm md:text-base">
             {t('overview.ready')}
