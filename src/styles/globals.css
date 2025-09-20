@@ -117,6 +117,18 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Typography sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
 }
 
 @layer base {
@@ -186,4 +198,61 @@
 
 html {
   font-size: var(--font-size);
+}
+
+/* Photo Carousel Enhancements */
+.photo-carousel-container {
+  /* Ensure smooth scrolling performance */
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.photo-carousel-item {
+  /* Better image rendering */
+  image-rendering: optimizeQuality;
+  
+  /* Smooth transitions */
+  transition: all 0.3s ease;
+}
+
+.photo-carousel-item:hover {
+  /* Subtle shadow enhancement */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile touch improvements */
+@media (hover: none) {
+  .photo-carousel-item:hover {
+    /* Remove hover effects on touch devices */
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Photo Modal Overlay */
+.photo-modal-overlay {
+  z-index: 9999 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  /* Ensure it's always relative to viewport, not page */
+  transform: translateZ(0) !important;
+}
+
+/* Photo Modal Content */
+.photo-modal-content {
+  position: relative !important;
+
+  /*max-width: 90vw !important;
+  sm-max-width: 50vw !important;*/
+  /*max-height: 90vh !important;
+  sm-max-height: 50vh !important;*/
+  margin: auto !important;
 }

@@ -180,6 +180,14 @@ const translations = {
 
     'personal.title': 'Personal & School Life',
     'personal.subtitle': 'Snapshots of daily life and school activities',
+
+    // Photo Carousel
+    'carousel.title': 'Photo Memories',
+    'carousel.subtitle': 'A collection of beautiful moments from Vincy\'s kindergarten journey',
+    'carousel.playing': 'Playing',
+    'carousel.paused': 'Paused',
+    'carousel.hover': 'Hover to pause',
+    'carousel.tap': 'Tap to enlarge',
   },
   zh: {
     // Navigation
@@ -346,6 +354,14 @@ const translations = {
     // TODO...
     'personal.title': '個人與校園生活',
     'personal.subtitle': '回憶與日常時光',
+
+    // Photo Carousel
+    'carousel.title': '照片回憶',
+    'carousel.subtitle': '穎珊幼稚園旅程中的美好時刻集錦',
+    'carousel.playing': '播放中',
+    'carousel.paused': '已暫停',
+    'carousel.hover': '滑鼠移入暫停',
+    'carousel.tap': '點擊放大',
   }
 };
 

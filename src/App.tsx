@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import './styles/globals.css'
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { PageNavigation } from './components/PageNavigation';
@@ -11,6 +11,7 @@ import { CreativeShowcase } from './components/CreativeShowcase';
 import { InterestsHobbies } from './components/InterestsHobbies';
 import { TeacherComments } from './components/TeacherComments';
 import { Card } from './components/ui/card';
+import { PhotoCarousel } from './components/PhotoCarousel';
 
 const ASSETS_URL = import.meta.env.VITE_ASSETS_URL;
 
@@ -342,6 +343,52 @@ function PortfolioApp() {
     }
   };
 
+  // Collect all photos for the carousel
+  const carouselPhotos = useMemo(() => {
+    const photos: Array<{id: string, src: string, alt: string, title?: string, category?: string}> = [];
+    
+    // Add artwork images
+    artworks.forEach((artwork, artworkIndex) => {
+      artwork.images.forEach((image, imageIndex) => {
+        photos.push({
+          id: `artwork-${artworkIndex}-${imageIndex}`,
+          src: image,
+          alt: `${artwork.title} - ${artwork.type}`,
+          title: artwork.title,
+          category: artwork.type
+        });
+      });
+    });
+
+    // Add personal memory images
+    personalMemories.forEach((memory, memoryIndex) => {
+      memory.images.forEach((image, imageIndex) => {
+        photos.push({
+          id: `memory-${memoryIndex}-${imageIndex}`,
+          src: image,
+          alt: `${memory.title}`,
+          title: memory.title,
+          category: memory.category
+        });
+      });
+    });
+
+    // Add some additional beautiful school photos
+    const additionalPhotos = [
+      {
+        id: 'student-myself-1',
+        src: ASSETS_URL + "/VincyKok.png",
+        alt: 'Vincy Kok',
+        title: 'Myself',
+        category: 'Myself'
+      }
+    ];
+
+    photos.push(...additionalPhotos);
+    
+    return photos;
+  }, [student, artworks, personalMemories, awards, interests]);
+
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Beautiful Background */}
@@ -352,7 +399,7 @@ function PortfolioApp() {
         }}
       />
       {/* Content overlay */}
-      <div className="relative z-10 min-h-screen bg-gradient-to-br from-blue-50/80 via-purple-50/80 to-pink-50/80 backdrop-blur-sm">
+      <div className="relative z-10 min-h-screen bg-gradient-to-br from-blue-50/80 via-purple-50/80 to-pink-50/80">
         <PageNavigation
           currentPage={currentPage}
           totalPages={pages.length}
@@ -366,6 +413,19 @@ function PortfolioApp() {
         >
           {pages[currentPage].content}
           
+          {/* Photo Carousel Section */}
+          <div className="mt-8 mb-8">
+            <div className="text-center mb-4">
+              <h2 className="text-xl font-semibold text-gray-800 mb-2">📸 {t('carousel.title')}</h2>
+              <p className="text-gray-600 text-sm">{t('carousel.subtitle')}</p>
+            </div>
+            <PhotoCarousel 
+              photos={carouselPhotos}
+              speed={25}
+              direction="left"
+            />
+          </div>
+
           {/* Footer */}
           <div className="text-center py-6 mt-8 border-t border-gray-200">
             <p className="text-gray-500 text-sm mb-2">
