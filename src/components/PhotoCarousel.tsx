@@ -25,7 +25,7 @@ export function PhotoCarousel({ photos, speed = 30, direction = 'left' }: PhotoC
   const [translateX, setTranslateX] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number>(0);
 
   // Duplicate photos for seamless loop
   const duplicatedPhotos = [...photos, ...photos, ...photos];
@@ -33,9 +33,9 @@ export function PhotoCarousel({ photos, speed = 30, direction = 'left' }: PhotoC
   useEffect(() => {
     if (!isPlaying || !containerRef.current || !contentRef.current) return;
 
-    const container = containerRef.current;
+    //const container = containerRef.current;
     const content = contentRef.current;
-    const containerWidth = container.offsetWidth;
+    //const containerWidth = container.offsetWidth;
     const contentWidth = content.offsetWidth / 3; // Since we have 3 copies
 
     let lastTime = performance.now();
@@ -74,13 +74,13 @@ export function PhotoCarousel({ photos, speed = 30, direction = 'left' }: PhotoC
     };
   }, [isPlaying, speed, direction]);
 
-  const handlePhotoHover = (photo: Photo) => {
+  /*const handlePhotoHover = (photo: Photo) => {
     setIsPlaying(false);
   };
 
   const handlePhotoLeave = () => {
     setIsPlaying(true);
-  };
+  };*/
 
   const handlePhotoClick = (photo: Photo) => {
     setIsPlaying(false);
@@ -115,7 +115,7 @@ export function PhotoCarousel({ photos, speed = 30, direction = 'left' }: PhotoC
             ref={contentRef}
             className="flex h-full absolute top-0 left-0"
             style={{ transform: `translateX(${translateX}px)` }}
-            transition={{ type: "linear", duration: 0 }}
+            transition={{ type: "tween", ease: "linear", duration: 0 }}
           >
             {duplicatedPhotos.map((photo, index) => (
               <motion.div
