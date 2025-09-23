@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import './styles/globals.css'
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { PageNavigation } from './components/PageNavigation';
@@ -12,6 +12,7 @@ import { InterestsHobbies } from './components/InterestsHobbies';
 import { TeacherComments } from './components/TeacherComments';
 import { Card } from './components/ui/card';
 import { PhotoCarousel } from './components/PhotoCarousel';
+import { fetchObjectList } from './api';
 
 const ASSETS_URL = import.meta.env.VITE_ASSETS_URL;
 
@@ -62,8 +63,8 @@ function PortfolioApp() {
       title: t('artwork.dancing.performance.2025'),
       type: "Video",
       description: t('artwork.dancing.performance.2025.desc'),
-      images: [ASSETS_URL + "/IMG_6882.png"],
-      videoUrl: ASSETS_URL + "/IMG_7036.mp4",
+      images: [ASSETS_URL + "/portfolio/artwork/Vincy_2025_performance.png"],
+      videoUrl: ASSETS_URL + "/portfolio/artwork/Vincy_2025_performance.mp4",
       date: "August 2025",
       mediaType: 'video' as const
     },
@@ -344,6 +345,16 @@ function PortfolioApp() {
   };
 
   // Collect all photos for the carousel
+  const [fetchedPhotoUrls, setFetchedPhotoUrls] = useState<string[]>([]);
+
+  useEffect(() => {
+    const URL = ASSETS_URL + '/api/v1/files';
+    const PREFIX = 'portfolio/interests/';
+    fetchObjectList(URL, PREFIX).then((urls) => {
+      setFetchedPhotoUrls(urls as string[]);
+    });
+  }, []);
+
   const carouselPhotos = useMemo(() => {
     const photos: Array<{id: string, src: string, alt: string, title?: string, category?: string}> = [];
     
@@ -385,9 +396,20 @@ function PortfolioApp() {
     ];
 
     photos.push(...additionalPhotos);
-    
+
+    // Add fetched photos
+    fetchedPhotoUrls.forEach((element, elementIndex) => {
+      photos.push({
+        id: `fetched-${elementIndex}`,
+        src: ASSETS_URL + "/" + element,
+        alt: `Interest Photo ${elementIndex + 1}`,
+        title: `Interest Photo ${elementIndex + 1}`,
+        category: 'Interest'
+      });
+    });
+
     return photos;
-  }, [student, artworks, personalMemories, awards, interests]);
+  }, [student, artworks, personalMemories, awards, interests, fetchedPhotoUrls]);
 
   return (
     <div className="min-h-screen relative overflow-hidden">
