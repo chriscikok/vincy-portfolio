@@ -70,23 +70,15 @@ const translations = {
     // Creative Work
     'creative.title': 'Creative Works & Art',
     'creative.subtitle': 'Artistic expression and creativity',
-    'artwork.family': 'Family Portrait',
-    'artwork.family.desc': 'A colorful drawing of her family with detailed features and expressions.',
-    'artwork.garden': 'Spring Garden',
-    'artwork.garden.desc': 'A vibrant watercolor painting showing flowers and butterflies.',
-    'artwork.dinosaur': 'Clay Dinosaur',
-    'artwork.dinosaur.desc': 'A creative clay sculpture of her favorite dinosaur with careful attention to detail.',
-    'artwork.drawing': 'Drawing',
-    'artwork.painting': 'Painting',
-    'artwork.sculpture': 'Sculpture',
-    'artwork.dancing': 'Dancing',
     'artwork.dancing.performance.2025': 'Dancing performance 2025',
     'artwork.dancing.performance.2025.desc': 'Participated in Annual Performance of Petite Princess Academy of Dance in Sai Wan Ho Civic Centre',
     'artwork.dancing.performance.2024': 'Christmas performance 2024',
     'artwork.dancing.performance.2024.desc': 'Participated in School Christimas performance in Hysan Place',
     'artwork.dancing.prize': 'Prize Presentation Ceremony',
     'artwork.dancing.prize.desc': 'Obtain Honorable Award from Petite Princess Academy of Dance',
-    
+    'artwork.school.artwork': 'School Artwork',
+    'artwork.school.artwork.desc': 'Artwork created during school art classes',
+
     // Social Skills
     'social.title': 'Social & Emotional Development',
     'social.subtitle': 'Emotional and social development',
@@ -143,6 +135,7 @@ const translations = {
     'category.games': 'Games',
     'category.music': 'Music',
     'category.sports': 'Sports',
+    'category.living': 'Living',
     
     // Teacher Comments
     'comments.title': 'Teacher Observations',
@@ -150,9 +143,22 @@ const translations = {
     'teacher.said': 'Teacher said about Vincy',
     'teacher.kindergarten': 'Kindergarten Teacher',
     'teacher.art': 'Art Teacher',
-    'teacher.comment1': 'Vincy attends class with focused listening, actively participates in classroom discussions, and shows strong learning interest. She particularly enjoys participating in dance and music activities, and can corrdinate movements well. During performance, she shows dedication and self-confidence when performing in front of others',
-    'teacher.comment2': 'Emma shows remarkable creativity and attention to detail in her artwork. She experiments with different materials confidently and always approaches art projects with excitement and imagination.',
-    
+    'teacher.classteacher': 'Class Teacher',
+    'teacher.dance': 'Dance Teacher',
+    'teacher.report': 'School Report',
+    'teacher.dance.examiner': 'Dance Examiner',
+    'teacher.comment1': 'Has a strong interest in learning, can focus attentively during lectures, and actively participates in discussions. Able to create dance steps that complement the music, performing exceptionally well. Demonstrated a serious attitude during dance rehearsals and was confident and engaged during performances.',
+    'teacher.comment2': 'Helpful and able to build harmonious relationships with peers. Enjoys going to school, and is proactive and courteous. Able to follow rules and to fulfill responsibilities according to her capabilities.',
+    'teacher.comment.k2.sem2': 'Cheerful personality and warm towards others. Loves learning and has excellent language expression skills. Has a talent for dancing.',
+    'teacher.comment.k2.sem1': 'Respects teachers and gets along harmoniously with peers. Peaceful and kind, with good learning abilities.',
+    'teacher.comment.k1.sem2': 'Cares for and looks after the young, and is very dedicated to learning.',
+    'teacher.comment.k1.sem1': 'Straightforward and innocent in personality, especially passionate and skilled in dance.',
+    'teacher.comment.pn.sem2': 'Cheerful in personality and warm towards others. Has a serious attitude towards learning.',
+    'teacher.comment.pn.sem1': 'Optimistic and sincere in personality, loved by teachers and classmates. Diligently studying and making continuous progress.',
+    'teacher.comment.dance.school': 'Vincy has always impressed me, her peers and other teachers with her hard work, focus and determination to achieve her learning goals. Her passion sets her apart from other students. She has deomonstrated excellent academic and holistic performance in our school with full marks achievement in The Commonwealth Society of Teachers of Dancing Examinations. I believe that these qualities make her an outstanding student.',
+    'teacher.comment.dance.rad': 'Strong ankles are used in point and flex exercises, good use of feet in point and close dancing steps. High elevation in bend and jump. Straight back can be maintained throughtout the whole lession. Pointed toes are shown in the marching. Good corrdination in both marching and skipping.',
+    'teacher.comment.dance.cstd': 'Wow! you look fantastic! You are so clever! Excellent timing, personality and coordination. Wonderful! Well done!',
+
     // Highlights
     'highlight.progress': 'Excellent academic progress',
     'highlight.social': 'Strong social skills',
@@ -177,9 +183,49 @@ const translations = {
 
     // Life
     // TODO...
-
     'personal.title': 'Personal & School Life',
     'personal.subtitle': 'Snapshots of daily life and school activities',
+    
+    'life.beautiful.memories': 'Beautiful Memories',
+    'life.activity.types' : 'Activity Types',
+    'life.happy.moments': 'Happy Moments',
+    'life.memories': 'memories',
+    'life.memory': 'memory',
+
+    'life.category.family': 'With Family',
+    'life.category.trips': 'Field Trips',
+    'life.category.events': 'School Events',
+    'life.category.daily': 'Daily Life',
+    'life.category.friends': 'With Friends',
+    'life.category.learning': 'Learning',
+    'life.category.fun': 'Fun Time',
+
+    'life.family.portrait': 'Family Portrait',
+    'life.family.portrait.desc': 'Capture and preserve the warmth and love of family through a beautiful portrait.',
+    'life.family.farming': 'Family Farming',
+    'life.family.farming.desc': 'Experience the joy of growing and harvesting food with family farming activities.',
+    'life.school.trip': 'Carbon Neutral Outdoor Classroom',
+    'life.school.trip.desc': 'Understanding life in nature and learning to embody a low-carbon lifestyle.',
+    'life.school.awards': 'Project Morals & Money (Project M²)',
+    'life.school.awards.desc': 'Joined with school principal to receive the school award from Project M².',
+    'life.friends.babysitting': 'Babysitting',
+    'life.friends.babysitting.desc': 'Taking care of her baby friends',
+
+    'life.place.studio': 'Photo Studio',
+    'life.place.taipo': 'Tai Po',
+    'life.place.kaitak': 'Kai Tak',
+    'life.place.waterfront.park': 'Tai Po Waterfront Park',
+
+    'life.with' : 'With: ',
+    'life.people.father': 'Father',
+    'life.people.mother': 'Mother',
+    'life.people.sister': 'Sister',
+    'life.people.grandpa': 'Grandpa',
+    'life.people.grandma': 'Grandma',
+    'life.people.classmates': 'Classmates',
+    'life.people.teachers': 'Teachers',
+    'life.people.principal': 'School Principal',
+    'life.people.friends': 'Friends',
 
     // Photo Carousel
     'carousel.title': 'Photo Memories',
@@ -188,6 +234,21 @@ const translations = {
     'carousel.paused': 'Paused',
     'carousel.hover': 'Hover to pause',
     'carousel.tap': 'Tap to enlarge',
+
+    // Common
+    'January': 'January',
+    'February': 'February',
+    'March': 'March',
+    'April': 'April',
+    'May': 'May',
+    'June': 'June',
+    'July': 'July',
+    'August': 'August',
+    'September': 'September',
+    'October': 'October',
+    'November': 'November',
+    'December': 'December',
+
   },
   zh: {
     // Navigation
@@ -247,22 +308,14 @@ const translations = {
     // Creative Work
     'creative.title': '創意作品與藝術',
     'creative.subtitle': '藝術表達和創造力',
-    'artwork.family': '家庭肖像',
-    'artwork.family.desc': '一幅色彩豐富的家庭畫作，具有詳細的特徵和表情。',
-    'artwork.garden': '春日花園',
-    'artwork.garden.desc': '一幅生動的水彩畫，展現花朵和蝴蝶。',
-    'artwork.dinosaur': '粘土恐龍',
-    'artwork.dinosaur.desc': '一個創意粘土雕塑，展現她最喜歡的恐龍，注重細節。',
-    'artwork.drawing': '繪畫',
-    'artwork.painting': '彩繪',
-    'artwork.sculpture': '雕塑',
-    'artwork.dancing': '跳舞',
     'artwork.dancing.performance.2025': '跳舞表演 2025',
     'artwork.dancing.performance.2025.desc': '參加在西灣河文娛中心舉行之2025年度小公主舞蹈學院周年大匯演暨頒獎典禮',
     'artwork.dancing.performance.2024': '跳舞表演 2024',
     'artwork.dancing.performance.2024.desc': '參加在希慎廣場舉行之聖誕歌舞表演',
     'artwork.dancing.prize': '小公主舞蹈學院',
     'artwork.dancing.prize.desc': '獲得卓越表現大獎',
+    'artwork.school.artwork': '校內藝術作品',
+    'artwork.school.artwork.desc': '在校內藝術課堂中創作的藝術作品',
     
     
     // Social Skills
@@ -319,6 +372,7 @@ const translations = {
     'category.games': '遊戲',
     'category.music': '音樂',
     'category.sports': '體育',
+    'category.living': '生活',
     
     // Teacher Comments
     'comments.title': '教師觀察',
@@ -326,9 +380,23 @@ const translations = {
     'teacher.said': '老師眼中的穎珊',
     'teacher.kindergarten': '幼稚園老師',
     'teacher.art': '美術老師',
-    'teacher.comment1': '穎珊上課專心聽講，積極參與課堂討論，表現出濃厚的學習與趣。她尤其喜愛參與舞蹈律動活動，表現出色。進行表演時，她表現投入，並能自信地以歌舞於他人面前表演，建議家長可持續培養，發展其藝術專長。',
-    'teacher.comment2': '艾瑪在她的藝術作品中表現出卓越的創造力和對細節的注意。她自信地嘗試不同材料，總是以興奮和想像力接近藝術項目。',
-    
+    'teacher.classteacher': '幼稚園班主任',
+    'teacher.dance': '舞蹈老師',
+    'teacher.report': '學校報告',
+    'teacher.dance.examiner': '舞蹈考官',
+    'teacher.comment1': '學習興趣濃厚，能專心聽講，亦會積極參與討論。能配合音樂自我創作舞步，表現出色。於跳舞表演綵排時態度認真，表演時自信投入。',
+    'teacher.comment2': '樂於助人，能與友伴建立融洽的關係。喜歡上學，主動有禮。能遵守規則，能按自己的能力完成自己的責任。',
+    'teacher.comment.k2.sem2': '性格開朗，待人熱情。熱愛學習，語言表達能力甚佳。具跳舞天份。',
+    'teacher.comment.k2.sem1': '尊敬師長，能與友伴和睦相處。為人平和善良，學習能力良好。',
+    'teacher.comment.k1.sem2': '關心並照顧幼小，學習十分用心。',
+    'teacher.comment.k1.sem1': '性格直率天真，特別熱愛及擅長舞蹈。',
+    'teacher.comment.pn.sem2': '性格開朗，待人熱情。學習態度認真。',
+    'teacher.comment.pn.sem1': '性格樂觀率真，受師長與同學喜愛。認真學習，日益進步。',
+    'teacher.comment.dance.school': '一直以她的努力、專注和實現學習目標的決心給我、她的同學和其他老師留下了深刻的印象。她的熱情使她與其他學生不同。她在我們的學校表現出色，尤其是在澳洲聯邦舞蹈教師協會(香港區)考試中取得了滿分。我相信這些品質使她成為一名傑出的學生。',
+    'teacher.comment.dance.rad': '能利用強壯的腳踝，良好的腳部運用體現在整個課堂的舞步中。能完成芭蕾舞中彎曲和跳躍動作并能高高躍起。整個課堂中可以保持直背。前進時能使用足尖前行。步操和跳躍協調性良好。',
+    'teacher.comment.dance.cstd': '哇！你看起來真棒！你真聰明！時機、個性和協調性都非常出色。太好了！做得好！',
+
+
     // Highlights
     'highlight.progress': '優秀的學術進步',
     'highlight.social': '強大的社交技能',
@@ -355,6 +423,49 @@ const translations = {
     'personal.title': '個人與校園生活',
     'personal.subtitle': '回憶與日常時光',
 
+    'life.beautiful.memories': '美好回憶',
+    'life.activity.types' : '活動類型',
+    'life.happy.moments': '快樂時光',
+    'life.memories': '回憶',
+    'life.memory': '回憶',
+
+    'life.category.family': '與家人',
+    'life.category.trips': '校外教學',
+    'life.category.events': '校園活動',
+    'life.category.daily': '日常生活',
+    'life.category.friends': '與朋友',
+    'life.category.learning': '學習',
+    'life.category.fun': '歡樂時光',
+
+
+    'life.family.portrait': '家庭肖像',
+    'life.family.portrait.desc': '通过一幅美丽的肖像捕捉并保存家庭的温暖和爱。',
+    'life.family.farming': '家庭農耕',
+    'life.family.farming.desc': '通過家庭農耕活動，體驗種植和收穫食物的樂趣。',
+    'life.school.trip': '綠幼童碳中和戶外學堂',
+    'life.school.trip.desc': '認識大自然生活，學習體現低碳生活。',
+    'life.school.awards': 'Project Morals & Money (Project M²)',
+    'life.school.awards.desc': '與校長一同接受Project M²的學校獎項。',
+    'life.friends.babysitting': '幼兒照顧',
+    'life.friends.babysitting.desc': '照顧小嬰兒',
+
+    'life.place.studio': '影樓',
+    'life.place.taipo': '大埔',
+    'life.place.kaitak': '啟德',
+    'life.place.waterfront.park': '大埔海濱公園',
+
+    'life.with' : '與 ',
+    'life.people.father': '父親',
+    'life.people.mother': '母親',
+    'life.people.sister': '妹妹',
+    'life.people.grandpa': '公公',
+    'life.people.grandma': '婆婆',
+    'life.people.classmates': '同學',
+    'life.people.teachers': '老師',
+    'life.people.principal': '校長',
+    'life.people.friends': '朋友',
+
+
     // Photo Carousel
     'carousel.title': '照片回憶',
     'carousel.subtitle': '穎珊幼稚園旅程中的美好時刻集錦',
@@ -362,6 +473,21 @@ const translations = {
     'carousel.paused': '已暫停',
     'carousel.hover': '滑鼠移入暫停',
     'carousel.tap': '點擊放大',
+
+
+    // Common
+    'January': '一月',
+    'February': '二月',
+    'March': '三月',
+    'April': '四月',
+    'May': '五月',
+    'June': '六月',
+    'July': '七月',
+    'August': '八月',
+    'September': '九月',
+    'October': '十月',
+    'November': '十一月',
+    'December': '十二月',
   }
 };
 

@@ -1,6 +1,5 @@
 import { Card } from './ui/card';
 import { ImageWithFallback } from './utils/ImageWithFallback';
-import { Badge } from './ui/badge';
 import { Play, Video, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -10,7 +9,7 @@ interface CreativeWork {
   type: string;
   description: string;
   images: string[];  // Changed from single image to array of images
-  date: string;
+  date?: string;
   mediaType?: 'image' | 'video'; // 'image' | 'video'
   videoUrl?: string;
 }
@@ -196,7 +195,7 @@ export function CreativeShowcase({ artworks }: CreativeShowcaseProps) {
                       </span>
                     )}
                   </h3>
-                  <Badge 
+                  {/*<Badge 
                     variant="outline" 
                     className={`text-xs self-start ${
                       artwork.mediaType === 'video' 
@@ -205,7 +204,7 @@ export function CreativeShowcase({ artworks }: CreativeShowcaseProps) {
                     }`}
                   >
                     {artwork.type}
-                  </Badge>
+                  </Badge>*/}
                 </div>
                 <p className="text-sm text-gray-600 mb-2 leading-relaxed">{artwork.description}</p>
                 <p className="text-xs text-gray-500">{artwork.date}</p>

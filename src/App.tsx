@@ -65,7 +65,7 @@ function PortfolioApp() {
       description: t('artwork.dancing.performance.2025.desc'),
       images: [ASSETS_URL + "/portfolio/artwork/Vincy_2025_performance.png"],
       videoUrl: ASSETS_URL + "/portfolio/artwork/Vincy_2025_performance.mp4",
-      date: "August 2025",
+      date: t('August') + " 2025",
       mediaType: 'video' as const
     },
     {
@@ -74,8 +74,23 @@ function PortfolioApp() {
       description: t('artwork.dancing.performance.2024.desc'),
       images: [ASSETS_URL + "/portfolio/artwork/Vincy_xmas_performance_2024.jpeg"],
       videoUrl: ASSETS_URL + "/portfolio/artwork/Vincy_xmas_performance_2024.mp4",
-      date: "December 2024",
+      date: t('December') + " 2024",
       mediaType: 'video' as const
+    },
+    {
+      title: t('artwork.school.artwork'),
+      type: "Image",
+      description: t('artwork.school.artwork.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/artwork/Vincy_School_Artwork_1.jpeg",
+        ASSETS_URL + "/portfolio/artwork/Vincy_School_Artwork_2.jpeg",
+        ASSETS_URL + "/portfolio/artwork/Vincy_School_Artwork_3.jpeg",
+        ASSETS_URL + "/portfolio/artwork/Vincy_School_Artwork_4.jpeg",
+        ASSETS_URL + "/portfolio/artwork/Vincy_School_Artwork_5.jpeg",
+        ASSETS_URL + "/portfolio/artwork/Vincy_School_Artwork_6.jpeg",
+
+      ],
+      mediaType: 'image' as const
     },
   ];
 
@@ -111,7 +126,7 @@ function PortfolioApp() {
       name: t('interest.cooking'),
       description: t('interest.cooking.desc'),
       image: ASSETS_URL + "/portfolio/interests/Vincy_cooking.jpeg",
-      category: t('category.science')
+      category: t('category.living')
     },
     {
       name: t('interest.cycling'),
@@ -125,15 +140,91 @@ function PortfolioApp() {
       image: ASSETS_URL + "/portfolio/interests/Vincy_dancing.jpeg",
       category: t('category.arts')
     },
+    {
+      name: t('interest.reading'),
+      description: t('interest.reading.desc'),
+      image: ASSETS_URL + "/portfolio/interests/Vincy_reading.jpeg",
+      category: t('category.reading')
+    },
   ];
 
   const teacherComments = [
     {
       teacher: "Ms. Chan",
-      role: t('teacher.kindergarten'),
+      role: t('teacher.classteacher'),
       comment: t('teacher.comment1'),
-      highlights: [t('highlight.talent')],
+      highlights: [t('highlight.talent'),t('highlight.expression'),t('highlight.creative')],
       date: "Aug 2025"
+    },
+    {
+      teacher: "Ms. Lai",
+      role: t('teacher.dance'),
+      comment: t('teacher.comment.dance.school'),
+      highlights: [t('highlight.talent'),t('highlight.expression')],
+      date: "Aug 2025"
+    },
+    {
+      teacher: t('teacher.report'),
+      role: t('teacher.kindergarten'),
+      comment: t('teacher.comment.k2.sem2'),
+      highlights: [t('highlight.social'), t('highlight.talent')],
+      date: "Aug 2025"
+    },
+    {
+      teacher: 'RAD Examiner',
+      role: t('teacher.dance.examiner'),
+      comment: t('teacher.comment.dance.rad'),
+      highlights: [t('highlight.talent'), t('highlight.expression')],
+      date: "May 2025"
+    },
+    {
+      teacher: t('teacher.report'),
+      role: t('teacher.kindergarten'),
+      comment: t('teacher.comment.k2.sem1'),
+      highlights: [t('highlight.progress'), t('highlight.social')],
+      date: "Feb 2025"
+    },
+    {
+      teacher: 'Ms. Mimilla',
+      role: t('teacher.dance.examiner'),
+      comment: t('teacher.comment.dance.cstd'),
+      highlights: [t('highlight.talent'), t('highlight.expression')],
+      date: "Sep 2024"
+    },
+    {
+      teacher: "Ms. Chu",
+      role: t('teacher.classteacher'),
+      comment: t('teacher.comment2'),
+      highlights: [t('highlight.helpful'), t('highlight.social')],
+      date: "Aug 2024"
+    },
+    {
+      teacher: t('teacher.report'),
+      role: t('teacher.kindergarten'),
+      comment: t('teacher.comment.k1.sem2'),
+      highlights: [t('highlight.helpful'), t('highlight.progress')],
+      date: "Aug 2024"
+    },
+    {
+      teacher: t('teacher.report'),
+      role: t('teacher.kindergarten'),
+      comment: t('teacher.comment.k1.sem1'),
+      highlights: [t('highlight.talent')],
+      date: "Feb 2024"
+    },
+    {
+      teacher: t('teacher.report'),
+      role: t('teacher.kindergarten'),
+      comment: t('teacher.comment.pn.sem2'),
+      highlights: [t('highlight.progress')],
+      date: "Aug 2023"
+    },
+    {
+      teacher: t('teacher.report'),
+      role: t('teacher.kindergarten'),
+      comment: t('teacher.comment.pn.sem1'),
+      highlights: [t('highlight.progress')],
+      date: "Feb 2023"
     },
     
   ];
@@ -248,18 +339,72 @@ function PortfolioApp() {
 
   const personalMemories = [
     {
-      title: "Family portrait day",
-      description: "Capturing smiles and joy with family in the studio.",
+      title: t('life.family.portrait'),
+      description: t('life.family.portrait.desc'),
       images: [
         ASSETS_URL + "/portfolio/life/Vincy_with_her_family.jpeg",
         ASSETS_URL + "/portfolio/life/Vincy_with_sister.jpeg",
         ASSETS_URL + "/portfolio/life/Vincy_kiss_her_sister.jpeg",
       ],
-      date: "November 2024",
-      location: "Studio",
-      category: "daily" as const,
-      participants: ["Father", "Mother", "Sister"],
+      date: t('November') + " 2024",
+      location: t('life.place.studio'),
+      category: "family" as const,
+      participants: [t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
       mood: "😘"
+    },
+    {
+      title: t('life.family.farming'),
+      description: t('life.family.farming.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_farming_1.jpg",
+        ASSETS_URL + "/portfolio/life/Vincy_farming_2.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_farming_3.jpeg",
+      ],
+      date: t('July') + " 2024",
+      location: t('life.place.taipo'),
+      category: "family" as const,
+      participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.mother'), t('life.people.sister')],
+      mood: "👩🏽‍🌾🌾"
+    },
+    {
+      title: t('life.school.trip'),
+      description: t('life.school.trip.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Field_trip_1_1.jpg",
+        ASSETS_URL + "/portfolio/life/Field_trip_1_2.jpg",
+      ],
+      date: t('March') + " 2025",
+      location: t('life.place.waterfront.park'),
+      category: "trips" as const,
+      participants: [t('life.people.mother'), t('life.people.classmates'), t('life.people.teachers')],
+      mood: "🪁"
+    },
+    {
+      title: t('life.school.awards'),
+      description: t('life.school.awards.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_Student_Rep.jpeg",
+      ],
+      date: t('March') + " 2025",
+      location: t('Kaitak'),
+      category: "events" as const,
+      participants: [t('life.people.principal')],
+      mood: "🏆"
+    },
+    {
+      title: t('life.friends.babysitting'),
+      description: t('life.friends.babysitting.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_Babysitting_1.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Babysitting_2.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Babysitting_3.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Babysitting_4.jpeg",
+      ],
+      date: t('August') + " 2025",
+      location: t('life.place.taipo'),
+      category: "friends" as const,
+      participants: [t('life.people.friends')],
+      mood: "👶"
     },
     
   ];
@@ -345,21 +490,40 @@ function PortfolioApp() {
   };
 
   // Collect all photos for the carousel
-  const [fetchedPhotoUrls, setFetchedPhotoUrls] = useState<string[]>([]);
+  const [fetchedPhotoUrls, setFetchedPhotoUrls] = useState<Array<{ url: string; category: string }>>([]);
 
   useEffect(() => {
     const URL = ASSETS_URL + '/api/v1/files';
-    const PREFIX = 'portfolio/interests/';
+    const PREFIX = 'portfolio/additional/caring/';
     fetchObjectList(URL, PREFIX).then((urls) => {
-      setFetchedPhotoUrls(urls as string[]);
+      setFetchedPhotoUrls(
+        (urls as string[]).map((url) => ({
+          url,
+          category: 'Caring'
+        }))
+      );
     });
+
+    const PREFIX_2 = 'portfolio/additional/sport/';
+    fetchObjectList(URL, PREFIX_2).then((urls) => {
+      setFetchedPhotoUrls((prevUrls) => [
+        ...prevUrls,
+        ...(urls as string[]).map((url) => ({
+          url,
+          category: 'Sport'
+        }))
+      ]);
+    });
+
+
+
   }, []);
 
   const carouselPhotos = useMemo(() => {
     const photos: Array<{id: string, src: string, alt: string, title?: string, category?: string}> = [];
     
     // Add artwork images
-    artworks.forEach((artwork, artworkIndex) => {
+    /*artworks.forEach((artwork, artworkIndex) => {
       artwork.images.forEach((image, imageIndex) => {
         photos.push({
           id: `artwork-${artworkIndex}-${imageIndex}`,
@@ -369,10 +533,10 @@ function PortfolioApp() {
           category: artwork.type
         });
       });
-    });
+    });*/
 
     // Add personal memory images
-    personalMemories.forEach((memory, memoryIndex) => {
+    /*personalMemories.forEach((memory, memoryIndex) => {
       memory.images.forEach((image, imageIndex) => {
         photos.push({
           id: `memory-${memoryIndex}-${imageIndex}`,
@@ -382,29 +546,16 @@ function PortfolioApp() {
           category: memory.category
         });
       });
-    });
-
-    // Add some additional beautiful school photos
-    const additionalPhotos = [
-      {
-        id: 'student-myself-1',
-        src: ASSETS_URL + "/VincyKok.png",
-        alt: 'Vincy Kok',
-        title: 'Myself',
-        category: 'Myself'
-      }
-    ];
-
-    photos.push(...additionalPhotos);
+    });*/
 
     // Add fetched photos
     fetchedPhotoUrls.forEach((element, elementIndex) => {
       photos.push({
         id: `fetched-${elementIndex}`,
-        src: ASSETS_URL + "/" + element,
-        alt: `Interest Photo ${elementIndex + 1}`,
-        title: `Interest Photo ${elementIndex + 1}`,
-        category: 'Interest'
+        src: ASSETS_URL + "/" + element.url,
+        alt: ``,
+        title: ``,
+        category: element.category
       });
     });
 
