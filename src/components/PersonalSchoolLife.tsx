@@ -5,6 +5,8 @@ import { Badge } from './ui/badge';
 
 import { ImageWithFallback } from './utils/ImageWithFallback';
 
+import { useLanguage } from '../contexts/LanguageContext';
+
 import { ChevronLeft, ChevronRight, Calendar, MapPin, Users } from 'lucide-react';
 
 interface LifeMemory {
@@ -13,7 +15,7 @@ interface LifeMemory {
   images: string[];
   date: string;
   location: string;
-  category: 'daily' | 'events' | 'trips' | 'friends' | 'learning' | 'fun';
+  category: 'daily' | 'events' | 'trips' | 'friends' | 'learning' | 'fun' | 'family';
   participants?: string[];
   mood: string;
 }
@@ -22,18 +24,21 @@ interface PersonalSchoolLifeProps {
   memories: LifeMemory[];
 }
 
-const categoryInfo = {
-  daily: { color: 'bg-blue-100 text-blue-800 border-blue-200', emoji: '📅', label: 'Daily Life' },
-  events: { color: 'bg-purple-100 text-purple-800 border-purple-200', emoji: '🎉', label: 'School Events' },
-  trips: { color: 'bg-green-100 text-green-800 border-green-200', emoji: '🚌', label: 'Field Trips' },
-  friends: { color: 'bg-pink-100 text-pink-800 border-pink-200', emoji: '👫', label: 'With Friends' },
-  learning: { color: 'bg-yellow-100 text-yellow-800 border-yellow-200', emoji: '📚', label: 'Learning' },
-  fun: { color: 'bg-orange-100 text-orange-800 border-orange-200', emoji: '🎪', label: 'Fun Time' }
-};
+
 
 export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
-  /*const { t } = useLanguage();*/
+  const { t } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState<Record<number, number>>({});
+
+  const categoryInfo = {
+    daily: { color: 'bg-blue-100 text-blue-800 border-blue-200', emoji: '📅', label: t('life.category.daily')},
+    events: { color: 'bg-purple-100 text-purple-800 border-purple-200', emoji: '🎉', label: t('life.category.events') },
+    trips: { color: 'bg-green-100 text-green-800 border-green-200', emoji: '🚌', label: t('life.category.trips') },
+    friends: { color: 'bg-pink-100 text-pink-800 border-pink-200', emoji: '👫', label: t('life.category.friends') },
+    family: { color: 'bg-pink-100 text-pink-800 border-pink-200', emoji: '🏠', label: t('life.category.family') },
+    learning: { color: 'bg-yellow-100 text-yellow-800 border-yellow-200', emoji: '📚', label:  t('life.category.learning') },
+    fun: { color: 'bg-orange-100 text-orange-800 border-orange-200', emoji: '🎪', label: t('life.category.fun') }
+  };
 
   const handleImageNavigation = (memoryIndex: number, direction: 'prev' | 'next') => {
     const memory = memories[memoryIndex];
@@ -72,17 +77,17 @@ export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
         <Card className="p-6 text-center bg-gradient-to-br from-pink-50 to-rose-100 border-pink-200">
           <div className="text-3xl mb-2">📸</div>
           <h3 className="text-2xl font-bold text-pink-700">{memories.length}</h3>
-          <p className="text-pink-600">Beautiful Memories</p>
+          <p className="text-pink-600">{t('life.beautiful.memories')}</p>
         </Card>
         <Card className="p-6 text-center bg-gradient-to-br from-blue-50 to-cyan-100 border-blue-200">
           <div className="text-3xl mb-2">🎊</div>
           <h3 className="text-2xl font-bold text-blue-700">{Object.keys(groupedMemories).length}</h3>
-          <p className="text-blue-600">Activity Types</p>
+          <p className="text-blue-600">{t('life.activity.types')}</p>
         </Card>
         <Card className="p-6 text-center bg-gradient-to-br from-green-50 to-emerald-100 border-green-200">
           <div className="text-3xl mb-2">😊</div>
           <h3 className="text-2xl font-bold text-green-700">100%</h3>
-          <p className="text-green-600">Happy Moments</p>
+          <p className="text-green-600">{t('life.happy.moments')}</p>
         </Card>
       </motion.div>
 
@@ -104,7 +109,7 @@ export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
               variant="outline" 
               className={`${categoryInfo[category as keyof typeof categoryInfo]?.color || 'bg-gray-100 text-gray-800 border-gray-200'} px-3 py-1`}
             >
-              {categoryMemories.length} {categoryMemories.length === 1 ? 'memory' : 'memories'}
+              {categoryMemories.length} {categoryMemories.length === 1 ? t('life.memory') : t('life.memories')}
             </Badge>
           </div>
 
@@ -176,12 +181,12 @@ export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
                         <h3 className="text-xl font-bold text-gray-800 group-hover:text-blue-700 transition-colors">
                           {memory.title}
                         </h3>
-                        <Badge 
+                        {/*<Badge 
                           variant="outline" 
                           className={`${categoryInfo[memory.category as keyof typeof categoryInfo]?.color || 'bg-gray-100 text-gray-800 border-gray-200'} shrink-0 ml-2`}
                         >
                           {categoryInfo[memory.category as keyof typeof categoryInfo]?.label || memory.category}
-                        </Badge>
+                        </Badge>*/}
                       </div>
                       
                       <p className="text-gray-600 mb-4 leading-relaxed">
@@ -201,7 +206,7 @@ export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
                         {memory.participants && memory.participants.length > 0 && (
                           <div className="flex items-center gap-2 text-gray-500">
                             <Users className="h-4 w-4" />
-                            <span>With: {memory.participants.join(', ')}</span>
+                            <span>{t('life.with')} {memory.participants.join(', ')}</span>
                           </div>
                         )}
                       </div>

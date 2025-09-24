@@ -24,6 +24,7 @@ export function InterestsHobbies({ interests }: InterestsHobbiesProps) {
       [t('category.music')]: 'bg-pink-100 text-pink-800',
       [t('category.reading')]: 'bg-green-100 text-green-800',
       [t('category.sport')]: 'bg-yellow-100 text-yellow-800',
+      [t('category.living')]: 'bg-red-100 text-red-800',
     };
     return colors[category] || 'bg-gray-100 text-gray-800';
   };
