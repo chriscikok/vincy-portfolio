@@ -1,5 +1,6 @@
 import { Card } from './ui/card';
 import { ImageWithFallback } from './utils/ImageWithFallback';
+import { Badge } from './ui/badge';
 import { Play, Video, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -10,7 +11,7 @@ interface CreativeWork {
   description: string;
   images: string[];  // Changed from single image to array of images
   date?: string;
-  mediaType?: 'image' | 'video'; // 'image' | 'video'
+  mediaType?: 'image' | 'video';
   videoUrl?: string;
 }
 
@@ -19,7 +20,6 @@ interface CreativeShowcaseProps {
 }
 
 export function CreativeShowcase({ artworks }: CreativeShowcaseProps) {
-  /*const { t } = useLanguage();*/
   const [playingVideo, setPlayingVideo] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<Record<number, number>>({});
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -127,7 +127,7 @@ export function CreativeShowcase({ artworks }: CreativeShowcaseProps) {
                         <ImageWithFallback
                           src={artwork.images[currentIndex]}
                           alt={`${artwork.title} - Image ${currentIndex + 1}`}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-cover"
                         />
                       </motion.div>
                     </AnimatePresence>
@@ -137,15 +137,21 @@ export function CreativeShowcase({ artworks }: CreativeShowcaseProps) {
                       <>
                         <button
                           onClick={(e) => handlePrevImage(artworkIndex, e)}
-                          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
+                          className="creative-showcase-nav-button absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 z-10
+                                   opacity-70 sm:opacity-0 sm:group-hover:opacity-100
+                                   hover:opacity-100 hover:scale-110 active:scale-95
+                                   touch-manipulation"
                         >
-                          <ChevronLeft className="w-4 h-4 text-gray-800" />
+                          <ChevronLeft className="w-5 h-5 text-gray-800" />
                         </button>
                         <button
                           onClick={(e) => handleNextImage(artworkIndex, e)}
-                          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
+                          className="creative-showcase-nav-button absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 z-10
+                                   opacity-70 sm:opacity-0 sm:group-hover:opacity-100
+                                   hover:opacity-100 hover:scale-110 active:scale-95
+                                   touch-manipulation"
                         >
-                          <ChevronRight className="w-4 h-4 text-gray-800" />
+                          <ChevronRight className="w-5 h-5 text-gray-800" />
                         </button>
                       </>
                     )}
@@ -157,10 +163,10 @@ export function CreativeShowcase({ artworks }: CreativeShowcaseProps) {
                           <button
                             key={imageIndex}
                             onClick={() => handleImageDot(artworkIndex, imageIndex)}
-                            className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                            className={`w-2.5 h-2.5 rounded-full transition-all duration-200 touch-manipulation ${
                               imageIndex === currentIndex 
-                                ? 'bg-white shadow-md' 
-                                : 'bg-white/50 hover:bg-white/70'
+                                ? 'bg-white shadow-md scale-110' 
+                                : 'bg-white/60 hover:bg-white/80 hover:scale-105'
                             }`}
                           />
                         ))}
@@ -195,7 +201,7 @@ export function CreativeShowcase({ artworks }: CreativeShowcaseProps) {
                       </span>
                     )}
                   </h3>
-                  {/*<Badge 
+                  <Badge 
                     variant="outline" 
                     className={`text-xs self-start ${
                       artwork.mediaType === 'video' 
@@ -204,7 +210,7 @@ export function CreativeShowcase({ artworks }: CreativeShowcaseProps) {
                     }`}
                   >
                     {artwork.type}
-                  </Badge>*/}
+                  </Badge>
                 </div>
                 <p className="text-sm text-gray-600 mb-2 leading-relaxed">{artwork.description}</p>
                 <p className="text-xs text-gray-500">{artwork.date}</p>

@@ -385,11 +385,26 @@ function PortfolioApp() {
       images: [
         ASSETS_URL + "/portfolio/life/Vincy_Student_Rep.jpeg",
       ],
-      date: t('March') + " 2025",
-      location: t('Kaitak'),
+      date: t('Augest') + " 2025",
+      location: t('life.place.kaitak'),
       category: "events" as const,
-      participants: [t('life.people.principal')],
+      participants: [t('life.people.father'), t('life.people.mother'), t('life.people.sister'),t('life.people.principal')],
       mood: "🏆"
+    },
+    {
+      title: t('life.school.sports.day'),
+      description: t('life.school.sports.day.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_Sport_Day_1.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Sport_Day_2.jpeg",
+      ],
+      videoUrl: ASSETS_URL + "/portfolio/life/Vincy_Sport_Day.mp4",
+      date: t('April') + " 2025",
+      location: t('Shatin'),
+      category: "events" as const,
+      participants: [ t('life.people.father'), t('life.people.mother'), t('life.people.sister'), t('life.people.classmates'), t('life.people.teachers')],
+      mood: "🏃🏻‍♀️",
+      mediaType: 'mixed' as const
     },
     {
       title: t('life.friends.babysitting'),
@@ -403,7 +418,7 @@ function PortfolioApp() {
       date: t('August') + " 2025",
       location: t('life.place.taipo'),
       category: "friends" as const,
-      participants: [t('life.people.friends')],
+      participants: [t('life.people.father'), t('life.people.mother'), t('life.people.sister'),t('life.people.friends')],
       mood: "👶"
     },
     
@@ -514,6 +529,8 @@ function PortfolioApp() {
         }))
       ]);
     });
+
+    console.log('Fetched photo URLs:', fetchedPhotoUrls);
 
 
 

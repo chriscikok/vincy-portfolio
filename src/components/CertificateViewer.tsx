@@ -30,7 +30,7 @@ export function CertificateViewer({ files, title, isOpen, onClose }: Certificate
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="w-[95vw] sm:w-[70vw] max-w-7xl h-[95vh] sm:h-[70vh] p-0 overflow-hidden flex flex-col">
+      <DialogContent className="w-[80vw] sm:w-[70vw] max-w-7xl h-[80vh] sm:h-[70vh] p-0 overflow-hidden flex flex-col">
         {/* Header Section */}
         <div className="flex-shrink-0 p-3 sm:p-4 border-b bg-white">
           <div className="flex items-center justify-between">

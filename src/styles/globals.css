@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --font-size: 16px;
@@ -249,10 +251,115 @@ html {
 /* Photo Modal Content */
 .photo-modal-content {
   position: relative !important;
-
-  /*max-width: 90vw !important;
-  sm-max-width: 50vw !important;*/
-  /*max-height: 90vh !important;
-  sm-max-height: 50vh !important;*/
+  max-width: 50vw !important;
+  max-height: 50vh !important;
   margin: auto !important;
+}
+
+/* Photo Modal Navigation */
+.photo-modal-nav-button {
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.photo-modal-nav-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 640px) {
+  .photo-modal-nav-button {
+    width: 48px !important;
+    height: 48px !important;
+  }
+}
+
+/* Ensure navigation buttons are visible on mobile landscape */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .personal-life-nav-button,
+  .creative-showcase-nav-button {
+    opacity: 0.8 !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(8px) !important;
+    transform: scale(1.1) !important;
+  }
+  
+  .personal-life-nav-button:hover,
+  .personal-life-nav-button:active,
+  .creative-showcase-nav-button:hover,
+  .creative-showcase-nav-button:active {
+    opacity: 1 !important;
+    transform: scale(1.15) !important;
+    background: rgba(255, 255, 255, 1) !important;
+  }
+}
+
+/* Touch improvements for mobile devices */
+@media (hover: none) and (pointer: coarse) {
+  .personal-life-nav-button,
+  .creative-showcase-nav-button {
+    opacity: 0.8 !important;
+    transform: scale(1.05) !important;
+  }
+  
+  .personal-life-nav-button:active,
+  .creative-showcase-nav-button:active {
+    opacity: 1 !important;
+    transform: scale(0.95) !important;
+  }
+}
+
+/* Video player styling */
+video::-webkit-media-controls-panel {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-timeline {
+  filter: invert(1);
+}
+
+/* Creative showcase specific improvements */
+.creative-showcase-nav-button {
+  backdrop-filter: blur(8px);
+}
+
+/* Enhanced mobile experience for creative showcase */
+@media (max-width: 768px) {
+  .creative-showcase-nav-button {
+    width: 44px !important;
+    height: 44px !important;
+    padding: 12px !important;
+  }
+  
+  .creative-showcase-nav-button svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+/* Improve touch feedback for creative showcase dots */
+@media (hover: none) and (pointer: coarse) {
+  .creative-showcase-nav-button {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+/* Better visibility on mobile landscape for creative showcase */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .creative-showcase-nav-button {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+  }
+}
+
+/* Prevent text selection during swipe */
+.photo-modal-overlay {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
 }
