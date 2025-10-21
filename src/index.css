@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+
+.photo-modal-overlay {
+  @apply fixed inset-0 bg-black/85 flex items-center justify-center z-50;
+}

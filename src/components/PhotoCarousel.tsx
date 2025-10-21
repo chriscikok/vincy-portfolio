@@ -224,27 +224,19 @@ export function PhotoCarousel({ photos, speed = 30, direction = 'left' }: PhotoC
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="photo-modal-overlay fixed inset-0 z-[9999] flex items-center justify-center bg-black/85 backdrop-blur-md"
+            className="photo-modal-overlay"
             onClick={handleCloseModal}
             onKeyDown={handleKeyDown}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
             tabIndex={0}
-            style={{ 
-              zIndex: 9999,
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              width: '100vw',
-              height: '100vh'
-            }}
           >
             <motion.div
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.5, opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="photo-modal-content w-[80vw] sm:w-[80vw] h-[80vh] sm:h-[80vh] flex items-center justify-center relative"
+              className="photo-modal-content min-w-[80vw] min-h-[80vh] w-auto h-auto max-w-[95vw] max-h-[95vh] flex items-center justify-center relative"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Navigation buttons */}
@@ -252,7 +244,7 @@ export function PhotoCarousel({ photos, speed = 30, direction = 'left' }: PhotoC
                 <>
                   <button
                     onClick={() => navigatePhoto('prev')}
-                    className="photo-modal-nav-button absolute left-2 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 rounded-full shadow-xl flex items-center justify-center hover:bg-white transition-all duration-200 border-2 border-gray-200 group"
+                    className="photo-modal-nav-button absolute left-2 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/10 rounded-full shadow-xl flex items-center justify-center hover:bg-white transition-all duration-200 group"
                     aria-label="Previous photo"
                   >
                     <ChevronLeft className="w-6 h-6 text-gray-700 group-hover:text-gray-900" />
@@ -260,7 +252,7 @@ export function PhotoCarousel({ photos, speed = 30, direction = 'left' }: PhotoC
                   
                   <button
                     onClick={() => navigatePhoto('next')}
-                    className="photo-modal-nav-button absolute right-2 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 rounded-full shadow-xl flex items-center justify-center hover:bg-white transition-all duration-200 border-2 border-gray-200 group"
+                    className="photo-modal-nav-button absolute right-2 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/10 rounded-full shadow-xl flex items-center justify-center hover:bg-white transition-all duration-200 group"
                     aria-label="Next photo"
                   >
                     <ChevronRight className="w-6 h-6 text-gray-700 group-hover:text-gray-900" />
@@ -271,14 +263,14 @@ export function PhotoCarousel({ photos, speed = 30, direction = 'left' }: PhotoC
               {/* Close button */}
               <button
                 onClick={handleCloseModal}
-                className="absolute -top-4 -right-4 z-20 w-10 h-10 bg-white rounded-full shadow-xl flex items-center justify-center hover:bg-gray-100 transition-colors border-2 border-gray-200"
+                className="absolute -top-4 -right-4 opacity-50 z-20 w-10 h-10 bg-white/50 rounded-full shadow-xl flex items-center justify-center hover:bg-gray-100 transition-colors "
                 aria-label="Close photo"
               >
                 <X className="w-5 h-5 text-gray-700" />
               </button>
 
               {/* Enlarged photo */}
-              <div className="relative rounded-xl overflow-hidden shadow-2xl bg-white w-full h-full">
+              <div className="relative rounded-xl overflow-hidden shadow-2xl bg-white w-full h-full  ">
                 <motion.div
                   key={selectedPhoto.id} // This ensures animation on photo change
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -289,7 +281,7 @@ export function PhotoCarousel({ photos, speed = 30, direction = 'left' }: PhotoC
                   <ImageWithFallback
                     src={selectedPhoto.src}
                     alt={selectedPhoto.alt}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain md:object-cover"
                   />
                 </motion.div>
                 

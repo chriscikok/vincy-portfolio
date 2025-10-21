@@ -53,7 +53,7 @@ export function ComprehensiveSkills({ academicSkills, socialTraits }: Comprehens
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {academicSkills.map((skill, index) => {
             const skillLevel = getSkillLevel(skill.level);
             return (
@@ -110,7 +110,7 @@ export function ComprehensiveSkills({ academicSkills, socialTraits }: Comprehens
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {socialTraits.map((trait, index) => (
             <motion.div
               key={trait.trait}
