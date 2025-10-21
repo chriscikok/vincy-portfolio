@@ -32,9 +32,13 @@ function PortfolioApp() {
 
   const skills = [
     {
-      name: t('skill.letter'),
+      name: t('skill.english'),
       level: 100,
-      description: t('skill.letter.desc')
+      description: t('skill.english.desc')
+    },{
+      name: t('skill.chinese'),
+      level: 100,
+      description: t('skill.chinese.desc')
     },{
       name: t('skill.number'),
       level: 100,
@@ -437,19 +441,19 @@ function PortfolioApp() {
             <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
               📋 {t('overview.summary')}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
-              <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+            <div className="grid sm:grid-cols-2 gap-4 text-center">
+              {/*<div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <div className="text-2xl font-bold text-blue-600">95%</div>
                 <p className="text-sm text-blue-800">{t('overview.highest')}</p>
                 <p className="text-xs text-gray-600">{t('skill.letter')}</p>
-              </div>
+              </div>*/}
               <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-                <div className="text-2xl font-bold text-green-600">6+</div>
+                <div className="text-2xl font-bold text-green-600">4</div>
                 <p className="text-sm text-green-800">{t('overview.areas')}</p>
                 <p className="text-xs text-gray-600">{t('overview.learner')}</p>
               </div>
               <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
-                <div className="text-2xl font-bold text-purple-600">4</div>
+                <div className="text-2xl font-bold text-purple-600">3</div>
                 <p className="text-sm text-purple-800">{t('overview.projects')}</p>
                 <p className="text-xs text-gray-600">{t('overview.expression')}</p>
               </div>

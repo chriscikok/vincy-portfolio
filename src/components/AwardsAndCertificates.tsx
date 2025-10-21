@@ -80,7 +80,7 @@ export function AwardsAndCertificates({ awards }: AwardsAndCertificatesProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8"
+        className="grid sm:grid-cols-2 gap-4 mb-8"
       >
 
         <Card className="p-6 text-center bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200">
@@ -121,7 +121,7 @@ export function AwardsAndCertificates({ awards }: AwardsAndCertificatesProps) {
             </Badge>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {categoryAwards.map((award, index) => (
               <motion.div
                 key={`${category}-${index}`}

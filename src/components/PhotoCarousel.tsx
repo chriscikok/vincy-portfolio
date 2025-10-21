@@ -224,20 +224,12 @@ export function PhotoCarousel({ photos, speed = 30, direction = 'left' }: PhotoC
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="photo-modal-overlay fixed inset-0 z-[9999] flex items-center justify-center bg-black/85 backdrop-blur-md"
+            className="photo-modal-overlay"
             onClick={handleCloseModal}
             onKeyDown={handleKeyDown}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
             tabIndex={0}
-            style={{ 
-              zIndex: 9999,
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              width: '100vw',
-              height: '100vh'
-            }}
           >
             <motion.div
               initial={{ scale: 0.5, opacity: 0 }}

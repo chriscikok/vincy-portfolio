@@ -74,7 +74,7 @@ export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8"
+        className="grid sm:grid-cols-3 gap-4 mb-8"
       >
         <Card className="p-6 text-center bg-gradient-to-br from-pink-50 to-rose-100 border-pink-200">
           <div className="text-3xl mb-2">📸</div>

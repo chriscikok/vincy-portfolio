@@ -35,7 +35,7 @@ export function InterestsHobbies({ interests }: InterestsHobbiesProps) {
         ⭐ {t('interests.title')}
       </h2>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid sm:grid-cols-2 gap-4">
         {interests.map((interest, index) => (
           <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
             <div className="h-80 sm:h-60 bg-gray-100">
