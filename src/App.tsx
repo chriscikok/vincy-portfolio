@@ -534,9 +534,16 @@ function PortfolioApp() {
       ]);
     });
 
-    console.log('Fetched photo URLs:', fetchedPhotoUrls);
-
-
+    const PREFIX_3 = 'portfolio/additional/school_events/';
+    fetchObjectList(URL, PREFIX_3).then((urls) => {
+      setFetchedPhotoUrls((prevUrls) => [
+        ...prevUrls,
+        ...(urls as string[]).map((url) => ({
+          url,
+          category: 'School Events'
+        }))
+      ]);
+    });
 
   }, []);
 
@@ -581,7 +588,7 @@ function PortfolioApp() {
     });
 
     return photos;
-  }, [student, artworks, personalMemories, awards, interests, fetchedPhotoUrls]);
+  }, [fetchedPhotoUrls]);
 
   return (
     <div className="min-h-screen relative overflow-hidden">
