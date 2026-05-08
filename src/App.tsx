@@ -613,12 +613,13 @@ function PortfolioApp() {
 
     const PREFIX_4 = 'portfolio/additional/cooking/';
     fetchObjectList(URL, PREFIX_4).then((urls) => {
-      setFetchedPhotoUrls(
-        (urls as string[]).map((url) => ({
+      setFetchedPhotoUrls((prevUrls) => [
+        ...prevUrls,
+        ...(urls as string[]).map((url) => ({
           url,
           category: 'Cooking'
         }))
-      );
+      ]);
     });
 
   }, []);
