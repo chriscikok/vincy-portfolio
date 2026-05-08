@@ -92,6 +92,8 @@ function PortfolioApp() {
       type: "Image",
       description: t('artwork.school.artwork.desc'),
       images: [
+        ASSETS_URL + "/portfolio/artwork/Vincy_School_Artwork_7.jpeg",
+        ASSETS_URL + "/portfolio/artwork/Vincy_School_Artwork_8.jpeg",
         ASSETS_URL + "/portfolio/artwork/Vincy_School_Artwork_1.jpeg",
         ASSETS_URL + "/portfolio/artwork/Vincy_School_Artwork_2.jpeg",
         ASSETS_URL + "/portfolio/artwork/Vincy_School_Artwork_3.jpeg",
@@ -607,6 +609,16 @@ function PortfolioApp() {
           category: 'School Events'
         }))
       ]);
+    });
+
+    const PREFIX_4 = 'portfolio/additional/cooking/';
+    fetchObjectList(URL, PREFIX_4).then((urls) => {
+      setFetchedPhotoUrls(
+        (urls as string[]).map((url) => ({
+          url,
+          category: 'Cooking'
+        }))
+      );
     });
 
   }, []);
