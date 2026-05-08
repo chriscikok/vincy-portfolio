@@ -571,8 +571,60 @@ function PortfolioApp() {
   const handlePageChange = (pageIndex: number) => {
     if (pageIndex >= 0 && pageIndex < pages.length) {
       setCurrentPage(pageIndex);
+      // update URL to provide a deep link for the current page
+      const indexToSlug: Record<number, string | undefined> = {
+        0: '',
+        1: 'skills',
+        2: 'creative',
+        3: 'interests',
+        4: 'teachercomments',
+        5: 'certificate',
+        6: 'personal'
+      };
+
+      const slug = indexToSlug[pageIndex];
+      const newPath = slug && slug.length > 0 ? `/${slug}` : '/';
+      try {
+        window.history.pushState(null, '', newPath);
+      } catch {
+        // ignore if history manipulation fails in some environments
+      }
     }
   };
+
+  // Sync initial page with current URL and handle back/forward navigation
+  useEffect(() => {
+    const getIndexFromPath = (pathname: string) => {
+      // remove leading and trailing slashes and normalize to lowercase
+      const clean = pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+      const map: Record<string, number> = {
+        '': 0,
+        'home': 0,
+        'skills': 1,
+        'creative': 2,
+        'interests': 3,
+        'comments': 4,
+        'teachercomments': 4,
+        'awards': 5,
+        'certificate': 5,
+        'certificates': 5,
+        'personal': 6
+      };
+
+      return map[clean] ?? 0;
+    };
+
+    // set initial page based on current location
+    setCurrentPage(getIndexFromPath(window.location.pathname));
+
+    // handle browser back/forward
+    const onPop = () => {
+      setCurrentPage(getIndexFromPath(window.location.pathname));
+    };
+
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, [pages.length]);
 
   // Collect all photos for the carousel
   const [fetchedPhotoUrls, setFetchedPhotoUrls] = useState<Array<{ url: string; category: string }>>([]);
