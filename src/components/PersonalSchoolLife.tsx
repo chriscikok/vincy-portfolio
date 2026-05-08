@@ -8,11 +8,11 @@ import { ChevronLeft, ChevronRight, Calendar, MapPin, Users, Play, Video } from 
 interface LifeMemory {
   title: string;
   description: string;
-  images: string[];
+  images?: string[];
   videoUrl?: string;
   date: string;
-  location: string;
-  category: 'daily' | 'events' | 'trips' | 'friends' | 'learning' | 'fun' | 'family';
+  location?: string;
+  category: 'daily' | 'events' | 'trips' | 'friends' | 'learning' | 'fun' | 'family' | 'dancing' | 'art' ;
   participants?: string[];
   mood: string;
   mediaType?: 'images' | 'video' | 'mixed';
@@ -29,6 +29,8 @@ const categoryInfo = {
   trips: { color: 'bg-green-100 text-green-800 border-green-200', emoji: '🚌', label: 'life.category.trips' },
   friends: { color: 'bg-pink-100 text-pink-800 border-pink-200', emoji: '👫', label: 'life.category.friends' },
   learning: { color: 'bg-yellow-100 text-yellow-800 border-yellow-200', emoji: '📚', label: 'life.category.learning' },
+  dancing: { color: 'bg-red-100 text-red-800 border-red-200', emoji: '💃', label: 'life.category.dancing' },
+  art: { color: 'bg-purple-100 text-purple-800 border-purple-200', emoji: '🎨', label: 'life.category.art' },
   fun: { color: 'bg-orange-100 text-orange-800 border-orange-200', emoji: '🎪', label: 'life.category.fun' }
 };
 
@@ -44,12 +46,12 @@ export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
     if (direction === 'prev') {
       setCurrentImageIndex(prev => ({
         ...prev,
-        [memoryIndex]: currentIndex === 0 ? memory.images.length - 1 : currentIndex - 1
+        [memoryIndex]: currentIndex === 0 ? (memory.images ? memory.images.length - 1 : 0) : currentIndex - 1
       }));
     } else {
       setCurrentImageIndex(prev => ({
         ...prev,
-        [memoryIndex]: currentIndex === memory.images.length - 1 ? 0 : currentIndex + 1
+        [memoryIndex]: currentIndex === (memory.images ? memory.images.length - 1 : 0) ? 0 : currentIndex + 1
       }));
     }
   };
@@ -147,11 +149,13 @@ export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
                           </video>
                         </div>
                       ) : (
-                        <ImageWithFallback
-                          src={memory.images[currentIndex]}
-                          alt={`${memory.title} - Image ${currentIndex + 1}`}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
+                        <div className="w-full h-full flex items-center justify-center">
+                          <ImageWithFallback
+                            src={memory.images ? memory.images[currentIndex] : undefined}
+                            alt={`${memory.title} - Image ${currentIndex + 1}`}
+                            className="max-w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
                       )}
                       
                       {/* Video Toggle Button */}
@@ -162,7 +166,7 @@ export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
                         >
                           {showVideo[globalIndex] ? (
                             <ImageWithFallback 
-                              src={memory.images[0]} 
+                              src={memory.images ? memory.images[0] : undefined}
                               alt="Show images"
                               className="w-6 h-6 rounded object-cover"
                             />
@@ -173,7 +177,7 @@ export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
                       )}
                       
                       {/* Navigation buttons - Always visible on touch devices or when multiple images */}
-                      {memory.images.length > 1 && !showVideo[globalIndex] && (
+                      {memory.images && memory.images.length > 1 && !showVideo[globalIndex] && (
                         <>
                           <button
                             onClick={() => handleImageNavigation(globalIndex, 'prev')}
@@ -246,10 +250,12 @@ export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
                           <Calendar className="h-4 w-4" />
                           <span>{memory.date}</span>
                         </div>
-                        <div className="flex items-center gap-2 text-gray-500">
-                          <MapPin className="h-4 w-4" />
-                          <span>{memory.location}</span>
-                        </div>
+                        {memory.location && (
+                          <div className="flex items-center gap-2 text-gray-500">
+                            <MapPin className="h-4 w-4" />
+                            <span>{memory.location}</span>
+                          </div>
+                        )}
                         {memory.participants && memory.participants.length > 0 && (
                           <div className="flex items-center gap-2 text-gray-500">
                             <Users className="h-4 w-4" />
