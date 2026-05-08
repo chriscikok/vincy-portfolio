@@ -1,13 +1,12 @@
 import { motion } from 'motion/react';
 import { Card } from './ui/card';
-import { Progress } from './ui/progress';
-import { Badge } from './ui/badge';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface Skill {
   name: string;
   level: number;
   description: string;
+  emoji: string;
 }
 
 interface SocialTrait {
@@ -25,7 +24,7 @@ interface ComprehensiveSkillsProps {
 export function ComprehensiveSkills({ academicSkills, socialTraits }: ComprehensiveSkillsProps) {
   const { t } = useLanguage();
 
-  const getSkillLevel = (level: number) => {
+  {/*const getSkillLevel = (level: number) => {
     if (level >= 85) return { label: t('academic.excellent'), color: 'text-green-600 bg-green-50 border-green-200' };
     if (level >= 70) return { label: t('academic.good'), color: 'text-blue-600 bg-blue-50 border-blue-200' };
     return { label: t('academic.developing'), color: 'text-orange-600 bg-orange-50 border-orange-200' };
@@ -35,7 +34,7 @@ export function ComprehensiveSkills({ academicSkills, socialTraits }: Comprehens
     if (level >= 85) return 'from-green-400 to-green-600';
     if (level >= 70) return 'from-blue-400 to-blue-600';
     return 'from-orange-400 to-orange-600';
-  };
+  };*/}
 
   return (
     <div className="space-y-8">
@@ -55,7 +54,7 @@ export function ComprehensiveSkills({ academicSkills, socialTraits }: Comprehens
 
         <div className="grid md:grid-cols-2 gap-6 items-stretch">
           {academicSkills.map((skill, index) => {
-            const skillLevel = getSkillLevel(skill.level);
+            // const skillLevel = getSkillLevel(skill.level);
             return (
               <motion.div
                 key={skill.name}
