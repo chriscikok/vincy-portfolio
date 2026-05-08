@@ -214,6 +214,8 @@ const translations = {
     'life.school.awards.desc': 'Joined with school principal to receive the school award from Project M².',
     'life.school.sports.day': 'Sports Day',
     'life.school.sports.day.desc': 'Participated in various fun athletic events and games during the school sports day.',
+    'life.school.hsbc.performance.2026': 'HSBC Community Festival 2026',
+    'life.school.hsbc.performance.2026.desc': 'Dancing performance in the HSBC Community Festival 2026',
     'life.friends.babysitting': 'Babysitting',
     'life.friends.babysitting.desc': 'Taking care of her baby friends',
 
@@ -221,6 +223,7 @@ const translations = {
     'life.place.taipo': 'Tai Po',
     'life.place.kaitak': 'Kai Tak',
     'life.place.shatin': 'Sha Tin',
+    'life.place.central' : 'Central',
     'life.place.waterfront.park': 'Tai Po Waterfront Park',
 
     'life.with' : 'With: ',
@@ -460,6 +463,8 @@ const translations = {
     'life.school.awards.desc': '與校長一同接受Project M²的學校獎項。',
     'life.school.sports.day': '運動會',
     'life.school.sports.day.desc': '在學校運動會中參加各種有趣的田徑項目和遊戲。',
+    'life.school.hsbc.performance.2026': '滙豐社區節 2026',
+    'life.school.hsbc.performance.2026.desc': '在滙豐社區節2026的舞蹈表演',
     'life.friends.babysitting': '幼兒照顧',
     'life.friends.babysitting.desc': '照顧小嬰兒',
 
@@ -467,6 +472,7 @@ const translations = {
     'life.place.taipo': '大埔',
     'life.place.kaitak': '啟德',
     'life.place.shatin': '沙田',
+    'life.place.central': '中環',
     'life.place.waterfront.park': '大埔海濱公園',
 
     'life.with' : '與 ',
