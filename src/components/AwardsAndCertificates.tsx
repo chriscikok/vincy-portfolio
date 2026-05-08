@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
+import { useLanguage } from '../contexts/LanguageContext';
 import { CertificateViewer } from './CertificateViewer';
 import { Eye, FileText, Image as ImageIcon } from 'lucide-react';
 
@@ -20,23 +21,24 @@ interface Award {
   image: string; // Keep for backward compatibility - preview image
   badge: string;
   files?: CertificateFile[]; // New: array of certificate files
+  result: string;
 }
 
 interface AwardsAndCertificatesProps {
   awards: Award[];
 }
 
-const categoryColors: Record<string, string> = {
+/*const categoryColors: Record<string, string> = {
   academic: 'bg-blue-100 text-blue-800 border-blue-200',
   creative: 'bg-purple-100 text-purple-800 border-purple-200',
   social: 'bg-green-100 text-green-800 border-green-200',
   speech: 'bg-yellow-100 text-yellow-800 border-yellow-200',
   dancing: 'bg-pink-100 text-pink-800 border-pink-200',
   sports: 'bg-orange-100 text-orange-800 border-orange-200'
-};
+};*/
 
 export function AwardsAndCertificates({ awards }: AwardsAndCertificatesProps) {
-  /*const { t } = useLanguage();*/
+  const { t } = useLanguage();
   const [selectedAward, setSelectedAward] = useState<Award | null>(null);
 
   const groupedAwards = awards.reduce((acc, award) => {
@@ -80,18 +82,18 @@ export function AwardsAndCertificates({ awards }: AwardsAndCertificatesProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="grid sm:grid-cols-2 gap-4 mb-8"
+        className="grid sm:grid-cols-2 gap-4 mb-8 items-stretch"
       >
 
-        <Card className="p-6 text-center bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200">
+        <Card className="h-full p-6 text-center bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200">
           <div className="text-3xl mb-2">🗂️</div>
           <h3 className="text-2xl font-bold text-purple-700">{Object.keys(groupedAwards).length}</h3>
-          <p className="text-purple-600">Categories</p>
+          <p className="text-purple-600">{t('awards.categories')}</p>
         </Card>
-        <Card className="p-6 text-center bg-gradient-to-br from-yellow-50 to-yellow-100 border-yellow-200">
+        <Card className="h-full p-6 text-center bg-gradient-to-br from-yellow-50 to-yellow-100 border-yellow-200">
           <div className="text-3xl mb-2">🏆</div>
           <h3 className="text-2xl font-bold text-yellow-700">{awards.length}</h3>
-          <p className="text-yellow-600">Total Awards & Certificates</p>
+          <p className="text-yellow-600">{t('awards.total.count')}</p>
         </Card>
         {/*<Card className="p-6 text-center bg-gradient-to-br from-green-50 to-green-100 border-green-200">
           <div className="text-3xl mb-2">📄</div>
@@ -112,16 +114,16 @@ export function AwardsAndCertificates({ awards }: AwardsAndCertificatesProps) {
           className="space-y-4"
         >
           <div className="flex items-center gap-3 mb-6">
-            <h2 className="text-2xl font-bold text-gray-800 capitalize">{category} Awards</h2>
-            <Badge 
+            <h2 className="text-2xl font-bold text-gray-800 capitalize">{t(`awards.category.${category}`)}</h2>
+            {/*<Badge 
               variant="outline" 
               className={`${categoryColors[category] || 'bg-gray-100 text-gray-800 border-gray-200'} px-3 py-1`}
             >
               {categoryAwards.length} {categoryAwards.length === 1 ? 'award' : 'awards'}
-            </Badge>
+            </Badge>*/}
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 items-stretch">
             {categoryAwards.map((award, index) => (
               <motion.div
                 key={`${category}-${index}`}
@@ -129,9 +131,9 @@ export function AwardsAndCertificates({ awards }: AwardsAndCertificatesProps) {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: (categoryIndex * 0.1) + (index * 0.1) }}
                 whileHover={{ scale: 1.02 }}
-                className="group"
+                className="group h-full"
               >
-                <Card className="bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:border-yellow-300 transition-all duration-300">
+                <Card className="h-full bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:border-yellow-300 transition-all duration-300">
                   {/*<div className="relative">
                     <div className="aspect-[4/3] overflow-hidden bg-gradient-to-br from-yellow-50 to-orange-50">
                       <ImageWithFallback
@@ -150,12 +152,12 @@ export function AwardsAndCertificates({ awards }: AwardsAndCertificatesProps) {
                       <h3 className="text-xl font-bold text-gray-800 group-hover:text-yellow-700 transition-colors">
                         {award.title}
                       </h3>
-                      <Badge 
+                      {/*<Badge 
                         variant="outline" 
                         className={`${categoryColors[category] || 'bg-gray-100 text-gray-800 border-gray-200'} shrink-0 ml-2`}
                       >
                         {category}
-                      </Badge>
+                      </Badge>*/}
                     </div>
                     
                     <p className="text-gray-600 mb-4 leading-relaxed">
@@ -188,7 +190,7 @@ export function AwardsAndCertificates({ awards }: AwardsAndCertificatesProps) {
                           className="w-full flex items-center gap-2 hover:bg-yellow-50 hover:border-yellow-300"
                         >
                           <Eye className="w-4 h-4" />
-                          View Certificate{award.files.length > 1 ? 's' : ''}
+                          {t('awards.viewer')}
                           {award.files.length > 1 && (
                             <Badge variant="secondary" className="ml-2">
                               {award.files.length}
@@ -204,7 +206,7 @@ export function AwardsAndCertificates({ awards }: AwardsAndCertificatesProps) {
                       </span>
                       <div className="flex items-center gap-1 text-yellow-600">
                         <span className="text-lg">✨</span>
-                        <span className="font-medium">Achievement Unlocked</span>
+                        <span className="font-medium">{award.result}</span>
                       </div>
                     </div>
                   </div>
