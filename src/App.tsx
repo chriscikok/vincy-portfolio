@@ -2,13 +2,13 @@ import { useEffect, useMemo, useState } from 'react'
 import './styles/globals.css'
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { PageNavigation } from './components/PageNavigation';
-import { StudentHeader } from './components/StudentHeader';
-import { AwardsAndCertificates } from './components/AwardsAndCertificates';
+//import { StudentHeader } from './components/StudentHeader';
+//import { AwardsAndCertificates } from './components/AwardsAndCertificates';
 import { PersonalSchoolLife } from './components/PersonalSchoolLife';
-import { ComprehensiveSkills } from './components/ComprehensiveSkills';
+//import { ComprehensiveSkills } from './components/ComprehensiveSkills';
 import { PortfolioPage } from './components/PortfolioPage';
-import { CreativeShowcase } from './components/CreativeShowcase';
-import { InterestsHobbies } from './components/InterestsHobbies';
+//import { CreativeShowcase } from './components/CreativeShowcase';
+//import { InterestsHobbies } from './components/InterestsHobbies';
 import { TeacherComments } from './components/TeacherComments';
 import { PhotoCarousel } from './components/PhotoCarousel';
 import { fetchObjectList } from './api';
@@ -20,7 +20,7 @@ function PortfolioApp() {
   const [currentPage, setCurrentPage] = useState(0)
   const { t } = useLanguage();
 
-  const student = {
+  /*const student = {
     name: "Vincy Kok",
     age: 6,
     grade: "Kindergarten 3",
@@ -158,7 +158,7 @@ function PortfolioApp() {
       image: ASSETS_URL + "/portfolio/interests/Vincy_reading.jpeg",
       category: t('category.reading')
     },
-  ];
+  ];*/
 
   const teacherComments = [
     {
@@ -240,7 +240,7 @@ function PortfolioApp() {
     },
     
   ];
-  const awards = [
+  /*const awards = [
     {
       title: "Petite Princess Academy of Dance",
       category: "dancing",
@@ -354,7 +354,7 @@ function PortfolioApp() {
       ],
       result: t('awards.result.progress')
     }
-  ];
+  ];*/
 
   const personalMemories = [
     {
@@ -495,13 +495,13 @@ function PortfolioApp() {
   
 
   const pages = [
-    {
+    /*{
       title: t('overview.title'), 
       subtitle: t('overview.subtitle'),
       content:  (
         <div className="space-y-6">
           <StudentHeader student={student} />
-          {/*
+          {
           <Card className="p-4 md:p-6">
             <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
               📋 {t('overview.summary')}
@@ -529,39 +529,41 @@ function PortfolioApp() {
               </div>
             </div>
           </Card>
-          */}
+          }
         </div>
       ) 
-    },
-    {
+    },*/
+    /*{
       title: t('page.title'),
       subtitle: t('skill.subtitle'),
       content: <ComprehensiveSkills academicSkills={skills} socialTraits={socialTraits} />
-    },{
+    },*/
+    /*{
       title: t('creative.title'),
       subtitle: t('creative.subtitle'),
       content: <CreativeShowcase artworks={artworks} />
-    },
-    {
+    },*/
+    /*{
       title: t('interests.title'),
       subtitle: t('interests.subtitle'),
       content: <InterestsHobbies interests={interests} />
+    },*/
+    {
+      title: t('personal.title'),
+      subtitle: t('personal.subtitle'),
+      content: <PersonalSchoolLife memories={personalMemories} />
     },
     {
       title: t('comments.title'),
       subtitle: t('comments.subtitle'),
       content: <TeacherComments comments={teacherComments} />
     },
-    {
+    /*{
       title: t('awards.title'),
       subtitle: t('awards.subtitle'),
       content: <AwardsAndCertificates awards={awards} />
-    },
-    {
-      title: t('personal.title'),
-      subtitle: t('personal.subtitle'),
-      content: <PersonalSchoolLife memories={personalMemories} />
-    }
+    }*/
+    
   ];
 
   
@@ -571,8 +573,60 @@ function PortfolioApp() {
   const handlePageChange = (pageIndex: number) => {
     if (pageIndex >= 0 && pageIndex < pages.length) {
       setCurrentPage(pageIndex);
+      // update URL to provide a deep link for the current page
+      const indexToSlug: Record<number, string | undefined> = {
+        //0: '',
+        //1: 'skills',
+        //1: 'creative',
+        //3: 'interests',
+        1: 'comments',
+        //3: 'certificate',
+        0: 'personal'
+      };
+
+      const slug = indexToSlug[pageIndex];
+      const newPath = slug && slug.length > 0 ? `/${slug}` : '/';
+      try {
+        window.history.pushState(null, '', newPath);
+      } catch {
+        // ignore if history manipulation fails in some environments
+      }
     }
   };
+
+  // Sync initial page with current URL and handle back/forward navigation
+  useEffect(() => {
+    const getIndexFromPath = (pathname: string) => {
+      // remove leading and trailing slashes and normalize to lowercase
+      const clean = pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+      const map: Record<string, number> = {
+        'personal': 0,
+        //'home': 0,
+        //'skills': 1,
+        //'creative': 1,
+        //'interests': 3,
+        'comments': 1,
+        //'teachercomments': 1,
+        //'awards': 3,
+        //'certificate': 3,
+        //'certificates': 3,
+        //'personal': 4
+      };
+
+      return map[clean] ?? 0;
+    };
+
+    // set initial page based on current location
+    setCurrentPage(getIndexFromPath(window.location.pathname));
+
+    // handle browser back/forward
+    const onPop = () => {
+      setCurrentPage(getIndexFromPath(window.location.pathname));
+    };
+
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, [pages.length]);
 
   // Collect all photos for the carousel
   const [fetchedPhotoUrls, setFetchedPhotoUrls] = useState<Array<{ url: string; category: string }>>([]);
