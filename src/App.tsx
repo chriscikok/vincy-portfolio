@@ -20,7 +20,7 @@ function PortfolioApp() {
   const [currentPage, setCurrentPage] = useState(0)
   const { t } = useLanguage();
 
-  const student = {
+  /*const student = {
     name: "Vincy Kok",
     age: 6,
     grade: "Kindergarten 3",
@@ -158,7 +158,7 @@ function PortfolioApp() {
       image: ASSETS_URL + "/portfolio/interests/Vincy_reading.jpeg",
       category: t('category.reading')
     },
-  ];
+  ];*/
 
   const teacherComments = [
     {
@@ -240,7 +240,7 @@ function PortfolioApp() {
     },
     
   ];
-  const awards = [
+  /*const awards = [
     {
       title: "Petite Princess Academy of Dance",
       category: "dancing",
@@ -354,7 +354,7 @@ function PortfolioApp() {
       ],
       result: t('awards.result.progress')
     }
-  ];
+  ];*/
 
   const personalMemories = [
     {
