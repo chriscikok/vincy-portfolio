@@ -495,13 +495,13 @@ function PortfolioApp() {
   
 
   const pages = [
-    {
+    /*{
       title: t('overview.title'), 
       subtitle: t('overview.subtitle'),
       content:  (
         <div className="space-y-6">
           <StudentHeader student={student} />
-          {/*
+          {
           <Card className="p-4 md:p-6">
             <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
               📋 {t('overview.summary')}
@@ -529,39 +529,41 @@ function PortfolioApp() {
               </div>
             </div>
           </Card>
-          */}
+          }
         </div>
       ) 
-    },
-    {
+    },*/
+    /*{
       title: t('page.title'),
       subtitle: t('skill.subtitle'),
       content: <ComprehensiveSkills academicSkills={skills} socialTraits={socialTraits} />
-    },{
+    },*/
+    /*{
       title: t('creative.title'),
       subtitle: t('creative.subtitle'),
       content: <CreativeShowcase artworks={artworks} />
-    },
-    {
+    },*/
+    /*{
       title: t('interests.title'),
       subtitle: t('interests.subtitle'),
       content: <InterestsHobbies interests={interests} />
+    },*/
+    {
+      title: t('personal.title'),
+      subtitle: t('personal.subtitle'),
+      content: <PersonalSchoolLife memories={personalMemories} />
     },
     {
       title: t('comments.title'),
       subtitle: t('comments.subtitle'),
       content: <TeacherComments comments={teacherComments} />
     },
-    {
+    /*{
       title: t('awards.title'),
       subtitle: t('awards.subtitle'),
       content: <AwardsAndCertificates awards={awards} />
-    },
-    {
-      title: t('personal.title'),
-      subtitle: t('personal.subtitle'),
-      content: <PersonalSchoolLife memories={personalMemories} />
-    }
+    }*/
+    
   ];
 
   
@@ -573,13 +575,13 @@ function PortfolioApp() {
       setCurrentPage(pageIndex);
       // update URL to provide a deep link for the current page
       const indexToSlug: Record<number, string | undefined> = {
-        0: '',
-        1: 'skills',
-        2: 'creative',
-        3: 'interests',
-        4: 'teachercomments',
-        5: 'certificate',
-        6: 'personal'
+        //0: '',
+        //1: 'skills',
+        //1: 'creative',
+        //3: 'interests',
+        1: 'comments',
+        //3: 'certificate',
+        0: 'personal'
       };
 
       const slug = indexToSlug[pageIndex];
@@ -598,17 +600,17 @@ function PortfolioApp() {
       // remove leading and trailing slashes and normalize to lowercase
       const clean = pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
       const map: Record<string, number> = {
-        '': 0,
-        'home': 0,
-        'skills': 1,
-        'creative': 2,
-        'interests': 3,
-        'comments': 4,
-        'teachercomments': 4,
-        'awards': 5,
-        'certificate': 5,
-        'certificates': 5,
-        'personal': 6
+        'personal': 0,
+        //'home': 0,
+        //'skills': 1,
+        //'creative': 1,
+        //'interests': 3,
+        'comments': 1,
+        //'teachercomments': 1,
+        //'awards': 3,
+        //'certificate': 3,
+        //'certificates': 3,
+        //'personal': 4
       };
 
       return map[clean] ?? 0;

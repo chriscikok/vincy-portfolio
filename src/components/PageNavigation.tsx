@@ -14,12 +14,12 @@ export function PageNavigation({ currentPage, totalPages, onPageChange }: PageNa
   const { t } = useLanguage();
   
   const pages = [
-    t('page.overview'),
-    t('page.skills'),
-    t('page.creative'),
-    t('page.interests'),
+    //t('page.overview'),
+    //t('page.skills'),
+    //t('page.creative'),
+    //t('page.interests'),
     t('page.comments'),
-    t('page.awards'),
+    //t('page.awards'),
     t('page.personal')
   ];
 
