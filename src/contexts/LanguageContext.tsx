@@ -86,6 +86,7 @@ const translations = {
     // Social Skills
     'social.title': 'Social & Emotional Development',
     'social.subtitle': 'Emotional and social development',
+    'social.examples': 'Examples',
     'social.empathy': 'Empathy & Kindness',
     'social.empathy.desc': 'Shows genuine care for classmates and always offers help when someone is upset.',
     'social.leadership': 'Leadership',
@@ -184,6 +185,21 @@ const translations = {
     // TODO...
     'awards.title': 'Awards & Certificates',
     'awards.subtitle': 'Recognition and achievements',
+    'awards.categories': 'Categories',
+    'awards.awards.and.certificates': 'awards & certificates',
+    'awards.total.count': 'Total Awards & Certificates',
+    'awards.category.dancing': 'Dancing',
+    'awards.category.speech': 'Speech',
+    'awards.category.academic': 'Academic',
+    'awards.result.achievement': 'Achievement unlocked',
+    'awards.result.progress': 'Progress made',
+    'awards.result.participation': 'Participation recognized',
+    'awards.result.certificate': 'Certificated earned',
+    'awards.viewer': 'View',
+    'awards.attachment.certificate': 'Official Certificate',
+    'awards.attachment.report': 'Official Certificate with examiner report',
+    'awards.attachment.award': 'Award',
+
 
     // Life
     // TODO...
@@ -208,12 +224,16 @@ const translations = {
     'life.family.portrait.desc': 'Capture and preserve the warmth and love of family through a beautiful portrait.',
     'life.family.farming': 'Family Farming',
     'life.family.farming.desc': 'Experience the joy of growing and harvesting food with family farming activities.',
+    'life.family.2026.farming': 'Family Farming 2026',
+    'life.family.2026.farming.desc': 'Experience the joy of growing and harvesting food with family farming activities in 2026.',
     'life.school.trip': 'Carbon Neutral Outdoor Classroom',
     'life.school.trip.desc': 'Understanding life in nature and learning to embody a low-carbon lifestyle.',
     'life.school.awards': 'Project Morals & Money (Project M²)',
     'life.school.awards.desc': 'Joined with school principal to receive the school award from Project M².',
     'life.school.sports.day': 'Sports Day',
     'life.school.sports.day.desc': 'Participated in various fun athletic events and games during the school sports day.',
+    'life.school.seoul.trip': 'Seoul Study Tour',
+    'life.school.seoul.trip.desc': 'Child-Friendly Community & Cultural Experience Seoul Study Tour',
     'life.school.hsbc.performance.2026': 'HSBC Community Festival 2026',
     'life.school.hsbc.performance.2026.desc': 'Dancing performance in the HSBC Community Festival 2026',
     'life.friends.babysitting': 'Babysitting',
@@ -225,6 +245,7 @@ const translations = {
     'life.place.shatin': 'Sha Tin',
     'life.place.central' : 'Central',
     'life.place.waterfront.park': 'Tai Po Waterfront Park',
+    'life.place.seoul': 'Seoul',
 
     'life.with' : 'With: ',
     'life.people.father': 'Father',
@@ -336,6 +357,7 @@ const translations = {
     // Social Skills
     'social.title': '社會與情感發展',
     'social.subtitle': '情感和社會發展',
+    'social.examples': '例子',
     'social.empathy': '同理心與善良',
     'social.empathy.desc': '對同學表現出真正的關心，總是在有人難過時提供幫助。',
     'social.leadership': '領導能力',
@@ -432,6 +454,21 @@ const translations = {
     // TODO...
     'awards.title': '獎項與證書',
     'awards.subtitle': '認可與成就',
+    'awards.categories': '類別',
+    'awards.awards.and.certificates': '獎項與證書',
+    'awards.total.count': '獎項與證書總數',
+    'awards.category.dancing': '舞蹈',
+    'awards.category.speech': '朗誦/演講',
+    'awards.category.academic': '學術',
+    'awards.result.achievement': '成就達成',
+    'awards.result.progress': '取得進展',
+    'awards.result.participation': '參與認可',
+    'awards.result.certificate': '獲得證書',
+    'awards.viewer': '檢視',
+    'awards.attachment.certificate': '官方證書',
+    'awards.attachment.report': '附考官報告的官方證書',
+    'awards.attachment.award': '獎項',
+    
 
     // Life
     // TODO...
@@ -457,12 +494,16 @@ const translations = {
     'life.family.portrait.desc': '通过一幅美丽的肖像捕捉并保存家庭的温暖和爱。',
     'life.family.farming': '家庭農耕',
     'life.family.farming.desc': '通過家庭農耕活動，體驗種植和收穫食物的樂趣。',
+    'life.family.2026.farming': '家庭農耕 2026',
+    'life.family.2026.farming.desc': '通過家庭農耕活動，體驗種植和收穫食物的樂趣（2026）。',
     'life.school.trip': '綠幼童碳中和戶外學堂',
     'life.school.trip.desc': '認識大自然生活，學習體現低碳生活。',
     'life.school.awards': 'Project Morals & Money (Project M²)',
     'life.school.awards.desc': '與校長一同接受Project M²的學校獎項。',
     'life.school.sports.day': '運動會',
     'life.school.sports.day.desc': '在學校運動會中參加各種有趣的田徑項目和遊戲。',
+    'life.school.seoul.trip': '首爾學習之旅',
+    'life.school.seoul.trip.desc': '兒童友善社區與文化體驗首爾遊學團',
     'life.school.hsbc.performance.2026': '滙豐社區節 2026',
     'life.school.hsbc.performance.2026.desc': '在滙豐社區節2026的舞蹈表演',
     'life.friends.babysitting': '幼兒照顧',
@@ -474,6 +515,7 @@ const translations = {
     'life.place.shatin': '沙田',
     'life.place.central': '中環',
     'life.place.waterfront.park': '大埔海濱公園',
+    'life.place.seoul': '首爾',
 
     'life.with' : '與 ',
     'life.people.father': '父親',

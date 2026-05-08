@@ -164,77 +164,77 @@ function PortfolioApp() {
       role: t('teacher.classteacher'),
       comment: t('teacher.comment1'),
       highlights: [t('highlight.talent'),t('highlight.expression'),t('highlight.creative')],
-      date: "Aug 2025"
+      date: t('August') + " 2025"
     },
     {
       teacher: "Ms. Lai",
       role: t('teacher.dance'),
       comment: t('teacher.comment.dance.school'),
       highlights: [t('highlight.talent'),t('highlight.expression')],
-      date: "Aug 2025"
+      date: t('August') + " 2025"
     },
     {
       teacher: t('teacher.report'),
       role: t('teacher.kindergarten'),
       comment: t('teacher.comment.k2.sem2'),
       highlights: [t('highlight.social'), t('highlight.talent')],
-      date: "Aug 2025"
+      date: t('August') + " 2025"
     },
     {
       teacher: 'RAD Examiner',
       role: t('teacher.dance.examiner'),
       comment: t('teacher.comment.dance.rad'),
       highlights: [t('highlight.talent'), t('highlight.expression')],
-      date: "May 2025"
+      date: t('May') + " 2025"
     },
     {
       teacher: t('teacher.report'),
       role: t('teacher.kindergarten'),
       comment: t('teacher.comment.k2.sem1'),
       highlights: [t('highlight.progress'), t('highlight.social')],
-      date: "Feb 2025"
+      date: t('February') + " 2025"
     },
     {
       teacher: 'Ms. Mimilla',
       role: t('teacher.dance.examiner'),
       comment: t('teacher.comment.dance.cstd'),
       highlights: [t('highlight.talent'), t('highlight.expression')],
-      date: "Sep 2024"
+      date: t('September') + " 2024"
     },
     {
       teacher: "Ms. Chu",
       role: t('teacher.classteacher'),
       comment: t('teacher.comment2'),
       highlights: [t('highlight.helpful'), t('highlight.social')],
-      date: "Aug 2024"
+      date: t('August') + " 2024"
     },
     {
       teacher: t('teacher.report'),
       role: t('teacher.kindergarten'),
       comment: t('teacher.comment.k1.sem2'),
       highlights: [t('highlight.helpful'), t('highlight.progress')],
-      date: "Aug 2024"
+      date: t('August') + " 2024"
     },
     {
       teacher: t('teacher.report'),
       role: t('teacher.kindergarten'),
       comment: t('teacher.comment.k1.sem1'),
       highlights: [t('highlight.talent')],
-      date: "Feb 2024"
+      date: t('February') + " 2024"
     },
     {
       teacher: t('teacher.report'),
       role: t('teacher.kindergarten'),
       comment: t('teacher.comment.pn.sem2'),
       highlights: [t('highlight.progress')],
-      date: "Aug 2023"
+      date: t('August') + " 2023"
     },
     {
       teacher: t('teacher.report'),
       role: t('teacher.kindergarten'),
       comment: t('teacher.comment.pn.sem1'),
       highlights: [t('highlight.progress')],
-      date: "Feb 2023"
+      date: t('February') + " 2023"
     },
     
   ];
@@ -243,107 +243,114 @@ function PortfolioApp() {
       title: "Petite Princess Academy of Dance",
       category: "dancing",
       description: "Received Honorable Award for outstanding performance.",
-      date: "Aug 2025",
+      date: t('August') + " 2025",
       image: "",
       badge: "🏆",
       files: [
         {
           url: ASSETS_URL + "/portfolio/awards/Vincy_Petite_Princess_2025_Award.jpeg",
           type: "image" as const,
-          name: "Official Certificate"
+          name: t('awards.attachment.award')
         }
-      ]
+      ],
+      result: t('awards.result.achievement')
     },
     {
       title: "Royal Academy of Dance",
       category: "dancing",
-      description: "Completed Demoonstration class for Pre-School Dance Level 2",
-      date: "May 2025",
+      description: "Completed Demonstration class for Pre-School Dance Level 2",
+      date: t('May') + " 2025",
       image: "",
       badge: "🏆",
       files: [
         {
           url: ASSETS_URL + "/portfolio/awards/Vincy_RAD_PSD2_20250515.pdf",
           type: "pdf" as const,
-          name: "Official Certificate"
+          name: t('awards.attachment.certificate')
         }
-      ]
+      ],
+      result: t('awards.result.progress')
     },
     {
       title: "The Commonwealth Society of Teachers of Dancing",
       category: "dancing",
       description: "Passed Pre Theatrical & Performing Arts with Honours Plus.",
-      date: "Sep 2024",
+      date: t('September') + " 2024",
       image: "",
       badge: "🏆",
       files: [
         {
           url: ASSETS_URL + "/portfolio/awards/Vincy_CSTD_Certificate_20240930.pdf",
           type: "pdf" as const,
-          name: "Official Certificate with Examiner Report"
+          name: t('awards.attachment.report')
         }
-      ]
+      ],
+      result: t('awards.result.achievement')
     },
     
     {
       title: "LCM HK Speech Festival",
       category: "speech",
       description: "Received Merit for 9th LCM Hong Kong Speech Festival.",
-      date: "May 2025",
+      date: t('May') + " 2025",
       image: "",
       badge: "💬",
       files: [
         {
           url: ASSETS_URL + "/portfolio/awards/Vincy_LCM_HK_Speech_Festival_20250503.pdf",
           type: "pdf" as const,
-          name: "Official Certificate with Examiner Report"
+          name: t('awards.attachment.report')
         }
-      ]
+      ],
+      result: t('awards.result.achievement')
     },
     {
       title: "GASCA",
       category: "speech",
       description: "Received Distinction Award for 57th English recitation competition.",
-      date: "Jul 2024",
+      date: t('July') + " 2024",
       image: "",
       badge: "💬",
       files: [
         {
           url: ASSETS_URL + "/portfolio/awards/Vincy_GASCA_international_competition.pdf",
           type: "pdf" as const,
-          name: "Official Certificate"
+          name: t('awards.attachment.certificate')
         }
-      ]
+      ],
+      result: t('awards.result.achievement')
     },
     {
       title: "British Council",
       category: "academic",
       description: "Completed phonic stage 1",
-      date: "Jan 2025",
+      date: t('January') + " 2025",
       image: "",
       badge: "👍",
       files: [
         {
           url: ASSETS_URL + "/portfolio/awards/Vincy_British_Council_Phonics_Stage_1.pdf",
           type: "pdf" as const,
-          name: "Completion Certificate"
+          name: t('awards.attachment.certificate')
         }
-      ]
+      ],
+      result: t('awards.result.progress')
     },
     {
       title: "British Council",
       category: "academic",
       description: "Completed phonic stage 2",
-      date: "Jun 2025",
+      date: t('June') + " 2025",
       image: "",
       badge: "👍",
       files: [
         {
           url: ASSETS_URL + "/portfolio/awards/Vincy_British_Council_Phonics_Stage_2.pdf",
           type: "pdf" as const,
-          name: "Completion Certificate"
+          name: t('awards.attachment.certificate')
         }
-      ]
+      ],
+      result: t('awards.result.progress')
     }
   ];
 
@@ -374,6 +381,20 @@ function PortfolioApp() {
       location: t('life.place.taipo'),
       category: "family" as const,
       participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.mother'), t('life.people.sister')],
+      mood: "👩🏽‍🌾🌾"
+    },
+    {
+      title: t('life.family.2026.farming'),
+      description: t('life.family.2026.farming.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_2026_Farming_1.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_2026_Farming_2.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_2026_Farming_3.jpeg",
+      ],
+      date: t('Apr') + " 2026",
+      location: t('life.place.taipo'),
+      category: "family" as const,
+      participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
       mood: "👩🏽‍🌾🌾"
     },
     {
@@ -415,6 +436,25 @@ function PortfolioApp() {
       participants: [ t('life.people.father'), t('life.people.mother'), t('life.people.sister'), t('life.people.classmates'), t('life.people.teachers')],
       mood: "🏃🏻‍♀️",
       mediaType: 'mixed' as const
+    },
+    {
+      title: t('life.school.seoul.trip'),
+      description: t('life.school.seoul.trip.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_Seoul_1.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Seoul_2.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Seoul_3.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Seoul_4.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Seoul_5.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Seoul_6.jpeg",
+      ],
+      //videoUrl: ASSETS_URL + "/portfolio/life/Vincy_Sport_Day.mp4",
+      date: t('March') + " 2026",
+      location: t('life.place.seoul'),
+      category: "events" as const,
+      participants: [ t('life.people.father'), t('life.people.classmates'), t('life.people.teachers')],
+      mood: "🇰🇷",
+      //mediaType: 'mixed' as const
     },
     {
       title: t('life.school.hsbc.performance.2026'),

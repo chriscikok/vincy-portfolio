@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useState } from 'react';
 import { Card } from './ui/card';
-import { Badge } from './ui/badge';
+import { useLanguage } from '../contexts/LanguageContext';
 import { ImageWithFallback } from './utils/ImageWithFallback';
 import { ChevronLeft, ChevronRight, Calendar, MapPin, Users, Play, Video } from 'lucide-react';
 
@@ -23,15 +23,17 @@ interface PersonalSchoolLifeProps {
 }
 
 const categoryInfo = {
-  daily: { color: 'bg-blue-100 text-blue-800 border-blue-200', emoji: '📅', label: 'Daily Life' },
-  events: { color: 'bg-purple-100 text-purple-800 border-purple-200', emoji: '🎉', label: 'School Events' },
-  trips: { color: 'bg-green-100 text-green-800 border-green-200', emoji: '🚌', label: 'Field Trips' },
-  friends: { color: 'bg-pink-100 text-pink-800 border-pink-200', emoji: '👫', label: 'With Friends' },
-  learning: { color: 'bg-yellow-100 text-yellow-800 border-yellow-200', emoji: '📚', label: 'Learning' },
-  fun: { color: 'bg-orange-100 text-orange-800 border-orange-200', emoji: '🎪', label: 'Fun Time' }
+  daily: { color: 'bg-blue-100 text-blue-800 border-blue-200', emoji: '📅', label: 'life.category.daily' },
+  family: { color: 'bg-blue-100 text-blue-800 border-blue-200', emoji: '🏠', label: 'life.category.family' },
+  events: { color: 'bg-purple-100 text-purple-800 border-purple-200', emoji: '🎉', label: 'life.category.events' },
+  trips: { color: 'bg-green-100 text-green-800 border-green-200', emoji: '🚌', label: 'life.category.trips' },
+  friends: { color: 'bg-pink-100 text-pink-800 border-pink-200', emoji: '👫', label: 'life.category.friends' },
+  learning: { color: 'bg-yellow-100 text-yellow-800 border-yellow-200', emoji: '📚', label: 'life.category.learning' },
+  fun: { color: 'bg-orange-100 text-orange-800 border-orange-200', emoji: '🎪', label: 'life.category.fun' }
 };
 
 export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
+  const { t } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState<Record<number, number>>({});
   const [showVideo, setShowVideo] = useState<Record<number, boolean>>({});
 
@@ -70,7 +72,7 @@ export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
   return (
     <div className="space-y-8">
       {/* Header Stats */}
-      <motion.div 
+      {/*<motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -91,7 +93,7 @@ export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
           <h3 className="text-2xl font-bold text-green-700">100%</h3>
           <p className="text-green-600">Happy Moments</p>
         </Card>
-      </motion.div>
+      </motion.div>*/}
 
       {/* Memories by Category */}
       {Object.entries(groupedMemories).map(([category, categoryMemories], categoryIndex) => (
@@ -105,14 +107,14 @@ export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
           <div className="flex items-center gap-3 mb-6">
             <span className="text-2xl">{categoryInfo[category as keyof typeof categoryInfo]?.emoji}</span>
             <h2 className="text-2xl font-bold text-gray-800">
-              {categoryInfo[category as keyof typeof categoryInfo]?.label || category}
+              {t(categoryInfo[category as keyof typeof categoryInfo]?.label || `life.category.${category}`)}
             </h2>
-            <Badge 
+            {/*<Badge 
               variant="outline" 
               className={`${categoryInfo[category as keyof typeof categoryInfo]?.color || 'bg-gray-100 text-gray-800 border-gray-200'} px-3 py-1`}
             >
               {categoryMemories.length} {categoryMemories.length === 1 ? 'memory' : 'memories'}
-            </Badge>
+            </Badge>*/}
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -226,12 +228,12 @@ export function PersonalSchoolLife({ memories }: PersonalSchoolLifeProps) {
                         <h3 className="text-xl font-bold text-gray-800 group-hover:text-blue-700 transition-colors">
                           {memory.title}
                         </h3>
-                        <Badge 
+                        {/*<Badge 
                           variant="outline" 
                           className={`${categoryInfo[memory.category as keyof typeof categoryInfo]?.color || 'bg-gray-100 text-gray-800 border-gray-200'} shrink-0 ml-2`}
                         >
                           {categoryInfo[memory.category as keyof typeof categoryInfo]?.label || memory.category}
-                        </Badge>
+                        </Badge>*/}
                       </div>
                       
                       <p className="text-gray-600 mb-4 leading-relaxed">

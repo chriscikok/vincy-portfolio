@@ -139,7 +139,7 @@ export function ComprehensiveSkills({ academicSkills, socialTraits }: Comprehens
                 <div className="mt-4">
                   <h4 className="font-semibold text-gray-800 mb-2 flex items-center gap-2">
                     <span className="text-sm">✨</span>
-                    Examples
+                    {t('social.examples')}
                   </h4>
                   <div className="space-y-2">
                     {trait.examples.map((example, idx) => (
