@@ -1,13 +1,12 @@
 import { motion } from 'motion/react';
 import { Card } from './ui/card';
-import { Progress } from './ui/progress';
-import { Badge } from './ui/badge';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface Skill {
   name: string;
   level: number;
   description: string;
+  emoji: string;
 }
 
 interface SocialTrait {
@@ -25,7 +24,7 @@ interface ComprehensiveSkillsProps {
 export function ComprehensiveSkills({ academicSkills, socialTraits }: ComprehensiveSkillsProps) {
   const { t } = useLanguage();
 
-  const getSkillLevel = (level: number) => {
+  {/*const getSkillLevel = (level: number) => {
     if (level >= 85) return { label: t('academic.excellent'), color: 'text-green-600 bg-green-50 border-green-200' };
     if (level >= 70) return { label: t('academic.good'), color: 'text-blue-600 bg-blue-50 border-blue-200' };
     return { label: t('academic.developing'), color: 'text-orange-600 bg-orange-50 border-orange-200' };
@@ -35,7 +34,7 @@ export function ComprehensiveSkills({ academicSkills, socialTraits }: Comprehens
     if (level >= 85) return 'from-green-400 to-green-600';
     if (level >= 70) return 'from-blue-400 to-blue-600';
     return 'from-orange-400 to-orange-600';
-  };
+  };*/}
 
   return (
     <div className="space-y-8">
@@ -53,9 +52,9 @@ export function ComprehensiveSkills({ academicSkills, socialTraits }: Comprehens
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 items-stretch">
           {academicSkills.map((skill, index) => {
-            const skillLevel = getSkillLevel(skill.level);
+            // const skillLevel = getSkillLevel(skill.level);
             return (
               <motion.div
                 key={skill.name}
@@ -63,9 +62,17 @@ export function ComprehensiveSkills({ academicSkills, socialTraits }: Comprehens
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
+                className="h-full"
               >
-                <Card className="p-6 hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm border-2 hover:border-blue-300">
-                  <div className="flex justify-between items-start mb-4">
+                <Card className="h-full p-6 hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm border-2 hover:border-blue-300">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="text-3xl flex-shrink-0">{skill.emoji}</div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-gray-800 mb-2">{skill.name}</h3>
+                      <p className="text-gray-600 leading-relaxed">{skill.description}</p>
+                    </div>
+                  </div>
+                  {/*<div className="flex justify-between items-start mb-4">
                     <h3 className="font-bold text-gray-800">{skill.name}</h3>
                     <Badge variant="outline" className={`${skillLevel.color} border`}>
                       {skillLevel.label}
@@ -88,7 +95,7 @@ export function ComprehensiveSkills({ academicSkills, socialTraits }: Comprehens
                   
                   <p className="text-sm text-gray-600 leading-relaxed">
                     {skill.description}
-                  </p>
+                  </p>*/}
                 </Card>
               </motion.div>
             );
@@ -110,7 +117,7 @@ export function ComprehensiveSkills({ academicSkills, socialTraits }: Comprehens
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 items-stretch">
           {socialTraits.map((trait, index) => (
             <motion.div
               key={trait.trait}
@@ -118,8 +125,9 @@ export function ComprehensiveSkills({ academicSkills, socialTraits }: Comprehens
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.3 + (index * 0.1) }}
               whileHover={{ scale: 1.02 }}
+              className="h-full"
             >
-              <Card className="p-6 hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm border-2 hover:border-green-300">
+              <Card className="h-full p-6 hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm border-2 hover:border-green-300">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="text-3xl flex-shrink-0">{trait.emoji}</div>
                   <div className="flex-1">
@@ -149,7 +157,7 @@ export function ComprehensiveSkills({ academicSkills, socialTraits }: Comprehens
       </motion.div>
 
       {/* Skills Summary */}
-      <motion.div
+      {/*<motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.6 }}
@@ -175,7 +183,7 @@ export function ComprehensiveSkills({ academicSkills, socialTraits }: Comprehens
             </div>
           </div>
         </Card>
-      </motion.div>
+      </motion.div>*/}
     </div>
   );
 }

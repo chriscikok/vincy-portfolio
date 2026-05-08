@@ -10,11 +10,10 @@ import { PortfolioPage } from './components/PortfolioPage';
 import { CreativeShowcase } from './components/CreativeShowcase';
 import { InterestsHobbies } from './components/InterestsHobbies';
 import { TeacherComments } from './components/TeacherComments';
-import { Card } from './components/ui/card';
 import { PhotoCarousel } from './components/PhotoCarousel';
 import { fetchObjectList } from './api';
 
-const ASSETS_URL = import.meta.env.VITE_ASSETS_URL;
+const ASSETS_URL = (import.meta.env.VITE_ASSETS_URL as string) || (import.meta.env.VITE_ASSETS_URL_BK as string) || '';
 
 
 function PortfolioApp() {
@@ -23,7 +22,7 @@ function PortfolioApp() {
 
   const student = {
     name: "Vincy Kok",
-    age: 5,
+    age: 6,
     grade: "Kindergarten 3",
     school: "Wayfoong Nursery School",
     favoriteColor: "#ff6b9d",
@@ -34,31 +33,38 @@ function PortfolioApp() {
     {
       name: t('skill.english'),
       level: 100,
-      description: t('skill.english.desc')
+      description: t('skill.english.desc'),
+      emoji: "🗣️"
     },{
       name: t('skill.chinese'),
       level: 100,
-      description: t('skill.chinese.desc')
+      description: t('skill.chinese.desc'),
+      emoji: "🀄"
     },{
       name: t('skill.number'),
       level: 100,
-      description: t('skill.number.desc')
+      description: t('skill.number.desc'),
+      emoji: "🔢"
     },{
       name: t('skill.reading'),
       level: 100,
-      description: t('skill.reading.desc')
+      description: t('skill.reading.desc'),
+      emoji: "📖"
     },{
       name: t('skill.writing'),
       level: 100,
-      description: t('skill.writing.desc')
+      description: t('skill.writing.desc'),
+      emoji: "✍️"
     },{
       name: t('skill.listening'),
       level: 100,
-      description: t('skill.listening.desc')
+      description: t('skill.listening.desc'),
+      emoji: "👂"
     },{
       name: t('skill.problem'),
       level: 100,
-      description: t('skill.problem.desc')
+      description: t('skill.problem.desc'),
+      emoji: "🧩"
     }
   ];
 
@@ -411,6 +417,22 @@ function PortfolioApp() {
       mediaType: 'mixed' as const
     },
     {
+      title: t('life.school.hsbc.performance.2026'),
+      description: t('life.school.hsbc.performance.2026.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_HSBC_Performance_2026_1.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_HSBC_Performance_2026_2.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_HSBC_Performance_2026_3.jpeg",
+      ],
+      //videoUrl: ASSETS_URL + "/portfolio/life/Vincy_HSBC_Performance.mp4",
+      date: t('April') + " 2026",
+      location: t('life.place.central'),
+      category: "events" as const,
+      participants: [ t('life.people.sister'), t('life.people.classmates'), t('life.people.teachers')],
+      mood: "💃",
+      //mediaType: 'mixed' as const
+    },
+    {
       title: t('life.friends.babysitting'),
       description: t('life.friends.babysitting.desc'),
       images: [
@@ -437,16 +459,17 @@ function PortfolioApp() {
       content:  (
         <div className="space-y-6">
           <StudentHeader student={student} />
+          {/*
           <Card className="p-4 md:p-6">
             <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
               📋 {t('overview.summary')}
             </h2>
             <div className="grid sm:grid-cols-2 gap-4 text-center">
-              {/*<div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+              {<div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <div className="text-2xl font-bold text-blue-600">95%</div>
                 <p className="text-sm text-blue-800">{t('overview.highest')}</p>
                 <p className="text-xs text-gray-600">{t('skill.letter')}</p>
-              </div>*/}
+              </div>}
               <div className="p-4 bg-green-50 rounded-lg border border-green-200">
                 <div className="text-2xl font-bold text-green-600">4</div>
                 <p className="text-sm text-green-800">{t('overview.areas')}</p>
@@ -464,6 +487,7 @@ function PortfolioApp() {
               </div>
             </div>
           </Card>
+          */}
         </div>
       ) 
     },
