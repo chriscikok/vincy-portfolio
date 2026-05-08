@@ -2,13 +2,13 @@ import { useEffect, useMemo, useState } from 'react'
 import './styles/globals.css'
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { PageNavigation } from './components/PageNavigation';
-import { StudentHeader } from './components/StudentHeader';
-import { AwardsAndCertificates } from './components/AwardsAndCertificates';
+//import { StudentHeader } from './components/StudentHeader';
+//import { AwardsAndCertificates } from './components/AwardsAndCertificates';
 import { PersonalSchoolLife } from './components/PersonalSchoolLife';
-import { ComprehensiveSkills } from './components/ComprehensiveSkills';
+//import { ComprehensiveSkills } from './components/ComprehensiveSkills';
 import { PortfolioPage } from './components/PortfolioPage';
-import { CreativeShowcase } from './components/CreativeShowcase';
-import { InterestsHobbies } from './components/InterestsHobbies';
+//import { CreativeShowcase } from './components/CreativeShowcase';
+//import { InterestsHobbies } from './components/InterestsHobbies';
 import { TeacherComments } from './components/TeacherComments';
 import { PhotoCarousel } from './components/PhotoCarousel';
 import { fetchObjectList } from './api';
