@@ -10,7 +10,6 @@ import { PortfolioPage } from './components/PortfolioPage';
 import { CreativeShowcase } from './components/CreativeShowcase';
 import { InterestsHobbies } from './components/InterestsHobbies';
 import { TeacherComments } from './components/TeacherComments';
-import { Card } from './components/ui/card';
 import { PhotoCarousel } from './components/PhotoCarousel';
 import { fetchObjectList } from './api';
 
