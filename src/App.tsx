@@ -409,7 +409,7 @@ function PortfolioApp() {
       date: t('Sep') + " 2024" + " - " + t('June') + " 2026",
       category: "learning" as const,
       //participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
-      mood: "🗣️"
+      mood: "✅"
     },
     {
       title: t('life.learning.speech'),
@@ -424,6 +424,20 @@ function PortfolioApp() {
       category: "learning" as const,
       //participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
       mood: "🗣️"
+    },
+    {
+      title: t('life.learning.chinese.story.telling'),
+      description: t('life.learning.chinese.story.telling.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_2026_Chinese_Story_Telling.jpg",
+      ],
+      videoUrl: ASSETS_URL + "/portfolio/life/Vincy_2026_Chinese_Story_Telling.mp4",
+      date: t('December') + " 2025",
+      //location: t('life.place.british.council'),
+      category: "learning" as const,
+      //participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
+      mood: "🗣️",
+      mediaType: 'video' as const
     },
     {
       title: t('life.school.trip'),
@@ -499,6 +513,20 @@ function PortfolioApp() {
       mediaType: 'video' as const
     },
     {
+      title: t('life.school.2026.hsbc.internal.cny.performance'),
+      description: t('life.school.2026.hsbc.internal.cny.performance.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_2026_HSBC_Chinese_New_Year_Performance.jpg",
+      ],
+      videoUrl: ASSETS_URL + "/portfolio/life/Vincy_2026_HSBC_Chinese_New_Year_Performance.mp4",
+      date: t('January') + " 2026",
+      location: t('life.place.hsbc.office'),
+      category: "events" as const,
+      participants: [ t('life.people.classmates'), t('life.people.teachers')],
+      mood: "🎤",
+      mediaType: 'video' as const
+    },
+    {
       title: t('life.school.hsbc.performance.2026'),
       description: t('life.school.hsbc.performance.2026.desc'),
       images: [
@@ -506,13 +534,13 @@ function PortfolioApp() {
         ASSETS_URL + "/portfolio/life/Vincy_HSBC_Performance_2026_2.jpeg",
         ASSETS_URL + "/portfolio/life/Vincy_HSBC_Performance_2026_3.jpeg",
       ],
-      //videoUrl: ASSETS_URL + "/portfolio/life/Vincy_HSBC_Performance.mp4",
+      videoUrl: ASSETS_URL + "/portfolio/life/Vincy_2026_HSBC_Central_Performance.mp4",
       date: t('April') + " 2026",
       location: t('life.place.central'),
       category: "events" as const,
       participants: [ t('life.people.sister'), t('life.people.classmates'), t('life.people.teachers')],
       mood: "💃",
-      //mediaType: 'mixed' as const
+      mediaType: 'mixed' as const
     },
     {
       title: t('life.school.art.work'),
