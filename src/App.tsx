@@ -358,126 +358,12 @@ function PortfolioApp() {
 
   const personalMemories = [
     {
-      title: t('life.family.portrait'),
-      description: t('life.family.portrait.desc'),
-      images: [
-        ASSETS_URL + "/portfolio/life/Vincy_with_her_family.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_with_sister.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_kiss_her_sister.jpeg",
-      ],
-      date: t('November') + " 2024",
-      location: t('life.place.studio'),
-      category: "family" as const,
-      participants: [t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
-      mood: "😘"
-    },
-    {
-      title: t('life.family.farming'),
-      description: t('life.family.farming.desc'),
-      images: [
-        ASSETS_URL + "/portfolio/life/Vincy_farming_1.jpg",
-        ASSETS_URL + "/portfolio/life/Vincy_farming_2.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_farming_3.jpeg",
-      ],
-      date: t('July') + " 2024",
-      location: t('life.place.taipo'),
-      category: "family" as const,
-      participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.mother'), t('life.people.sister')],
-      mood: "👩🏽‍🌾🌾"
-    },
-    {
-      title: t('life.family.2026.farming'),
-      description: t('life.family.2026.farming.desc'),
-      images: [
-        ASSETS_URL + "/portfolio/life/Vincy_2026_Farming_1.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_2026_Farming_2.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_2026_Farming_3.jpeg",
-      ],
-      date: t('Apr') + " 2026",
-      location: t('life.place.taipo'),
-      category: "family" as const,
-      participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
-      mood: "👩🏽‍🌾🌾"
-    },
-    {
-      title: t('life.learning.phonics'),
-      description: t('life.learning.phonics.desc'),
-      images: [
-        ASSETS_URL + "/portfolio/life/Vincy_British_Council_Phonics_Stage_1.jpg",
-        ASSETS_URL + "/portfolio/life/Vincy_British_Council_Phonics_Stage_2.jpg",
-      ],
-      date: t('Sep') + " 2024" + " - " + t('June') + " 2026",
-      category: "learning" as const,
-      //participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
-      mood: "✅"
-    },
-    {
-      title: t('life.learning.speech'),
-      description: t('life.learning.speech.desc'),
-      images: [
-        ASSETS_URL + "/portfolio/life/Vincy_GASCA_international_competition.jpg",
-        ASSETS_URL + "/portfolio/life/Vincy_LCM_HK_Speech_Festival_20250503_Page_1.jpg",
-        ASSETS_URL + "/portfolio/life/Vincy_LCM_HK_Speech_Festival_20250503_Page_2.jpg",
-      ],
-      date: t('July') + " 2024" + " - " + t('May') + " 2025",
-      //location: t('life.place.british.council'),
-      category: "learning" as const,
-      //participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
-      mood: "🗣️"
-    },
-    {
-      title: t('life.learning.chinese.story.telling'),
-      description: t('life.learning.chinese.story.telling.desc'),
-      images: [
-        ASSETS_URL + "/portfolio/life/Vincy_2026_Chinese_Story_Telling.jpg",
-      ],
-      videoUrl: ASSETS_URL + "/portfolio/life/Vincy_2026_Chinese_Story_Telling.mp4",
-      date: t('December') + " 2025",
-      //location: t('life.place.british.council'),
-      category: "learning" as const,
-      //participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
-      mood: "🗣️",
-      mediaType: 'video' as const
-    },
-    {
-      title: t('life.school.trip'),
-      description: t('life.school.trip.desc'),
-      images: [
-        ASSETS_URL + "/portfolio/life/Field_trip_1_1.jpg",
-        ASSETS_URL + "/portfolio/life/Field_trip_1_2.jpg",
-      ],
-      date: t('March') + " 2025",
-      location: t('life.place.waterfront.park'),
-      category: "trips" as const,
-      participants: [t('life.people.mother'), t('life.people.classmates'), t('life.people.teachers')],
-      mood: "🪁"
-    },
-    {
-      title: t('life.school.seoul.trip'),
-      description: t('life.school.seoul.trip.desc'),
-      images: [
-        ASSETS_URL + "/portfolio/life/Vincy_Seoul_1.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_Seoul_2.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_Seoul_3.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_Seoul_4.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_Seoul_5.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_Seoul_6.jpeg",
-      ],
-      //videoUrl: ASSETS_URL + "/portfolio/life/Vincy_Sport_Day.mp4",
-      date: t('March') + " 2026",
-      location: t('life.place.seoul'),
-      category: "trips" as const,
-      participants: [ t('life.people.father'), t('life.people.classmates'), t('life.people.teachers')],
-      mood: "🇰🇷",
-      //mediaType: 'mixed' as const
-    },
-    {
       title: t('life.school.awards'),
       description: t('life.school.awards.desc'),
       images: [
         ASSETS_URL + "/portfolio/life/Vincy_Student_Rep.jpeg",
       ],
-      date: t('Augest') + " 2025",
+      date: t('August') + " 2025",
       location: t('life.place.kaitak'),
       category: "events" as const,
       participants: [t('life.people.father'), t('life.people.mother'), t('life.people.sister'),t('life.people.principal')],
@@ -543,25 +429,109 @@ function PortfolioApp() {
       mediaType: 'mixed' as const
     },
     {
-      title: t('life.school.art.work'),
-      description: t('life.school.art.work.desc'),
+      title: t('life.learning.phonics'),
+      description: t('life.learning.phonics.desc'),
       images: [
-        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_1.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_2.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_3.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_4.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_5.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_6.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_7.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_8.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_British_Council_Phonics_Stage_1.jpg",
+        ASSETS_URL + "/portfolio/life/Vincy_British_Council_Phonics_Stage_2.jpg",
       ],
-      date: t('September') + " 2023" + " - " + t('June') + " 2026",
-      location: t('life.place.school'),
-      category: "art" as const,
-      //participants: [t('life.people.father'), t('life.people.mother'), t('life.people.sister'),t('life.people.principal')],
-      mood: "🧑‍🎨"
+      date: t('September') + " 2024" + " - " + t('June') + " 2026",
+      category: "learning" as const,
+      //participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
+      mood: "✅"
     },
+    {
+      title: t('life.learning.speech'),
+      description: t('life.learning.speech.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_GASCA_international_competition.jpg",
+        ASSETS_URL + "/portfolio/life/Vincy_LCM_HK_Speech_Festival_20250503_Page_1.jpg",
+        ASSETS_URL + "/portfolio/life/Vincy_LCM_HK_Speech_Festival_20250503_Page_2.jpg",
+      ],
+      date: t('July') + " 2024" + " - " + t('May') + " 2025",
+      //location: t('life.place.british.council'),
+      category: "learning" as const,
+      //participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
+      mood: "🗣️"
+    },
+    {
+      title: t('life.learning.chinese.story.telling'),
+      description: t('life.learning.chinese.story.telling.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_2026_Chinese_Story_Telling.jpg",
+      ],
+      videoUrl: ASSETS_URL + "/portfolio/life/Vincy_2026_Chinese_Story_Telling.mp4",
+      date: t('December') + " 2025",
+      //location: t('life.place.british.council'),
+      category: "learning" as const,
+      //participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
+      mood: "🗣️",
+      mediaType: 'video' as const
+    },
+    {
+      title: t('life.family.portrait'),
+      description: t('life.family.portrait.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_with_her_family.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_with_sister.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_kiss_her_sister.jpeg",
+      ],
+      date: t('November') + " 2024",
+      location: t('life.place.studio'),
+      category: "family" as const,
+      participants: [t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
+      mood: "😘"
+    },
+    {
+      title: t('life.family.farming'),
+      description: t('life.family.farming.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_farming_1.jpg",
+        ASSETS_URL + "/portfolio/life/Vincy_farming_2.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_farming_3.jpeg",
+      ],
+      date: t('July') + " 2024",
+      location: t('life.place.taipo'),
+      category: "family" as const,
+      participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.mother'), t('life.people.sister')],
+      mood: "👩🏽‍🌾🌾"
+    },
+    {
+      title: t('life.family.2026.farming'),
+      description: t('life.family.2026.farming.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_2026_Farming_1.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_2026_Farming_2.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_2026_Farming_3.jpeg",
+      ],
+      date: t('April') + " 2026",
+      location: t('life.place.taipo'),
+      category: "family" as const,
+      participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
+      mood: "👩🏽‍🌾🌾"
+    },
+    
+    
+    
+    
+    
 
+    
+    {
+      title: t('life.friends.babysitting'),
+      description: t('life.friends.babysitting.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_Babysitting_1.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Babysitting_2.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Babysitting_3.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Babysitting_4.jpeg",
+      ],
+      date: t('August') + " 2025",
+      location: t('life.place.taipo'),
+      category: "friends" as const,
+      participants: [t('life.people.father'), t('life.people.mother'), t('life.people.sister'),t('life.people.friends')],
+      mood: "👶"
+    },
     {
       title: t('life.dancing.certificates'),
       description: t('life.dancing.certificates.desc'),
@@ -588,7 +558,7 @@ function PortfolioApp() {
         ASSETS_URL + "/portfolio/life/Vincy_2025_performance.png",
       ],
       videoUrl: ASSETS_URL + "/portfolio/life/Vincy_2025_performance.mp4",
-      date: t('Augest') + " 2025",
+      date: t('August') + " 2025",
       location: t('life.place.sai.wan.ho'),
       category: "dancing" as const,
       participants: [ t('life.people.father'), t('life.people.mother')],
@@ -596,21 +566,56 @@ function PortfolioApp() {
       mediaType: 'video' as const
     },
     {
-      title: t('life.friends.babysitting'),
-      description: t('life.friends.babysitting.desc'),
+      title: t('life.school.trip'),
+      description: t('life.school.trip.desc'),
       images: [
-        ASSETS_URL + "/portfolio/life/Vincy_Babysitting_1.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_Babysitting_2.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_Babysitting_3.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_Babysitting_4.jpeg",
+        ASSETS_URL + "/portfolio/life/Field_trip_1_1.jpg",
+        ASSETS_URL + "/portfolio/life/Field_trip_1_2.jpg",
       ],
-      date: t('August') + " 2025",
-      location: t('life.place.taipo'),
-      category: "friends" as const,
-      participants: [t('life.people.father'), t('life.people.mother'), t('life.people.sister'),t('life.people.friends')],
-      mood: "👶"
+      date: t('March') + " 2025",
+      location: t('life.place.waterfront.park'),
+      category: "trips" as const,
+      participants: [t('life.people.mother'), t('life.people.classmates'), t('life.people.teachers')],
+      mood: "🪁"
     },
-    
+    {
+      title: t('life.school.seoul.trip'),
+      description: t('life.school.seoul.trip.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_Seoul_1.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Seoul_2.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Seoul_3.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Seoul_4.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Seoul_5.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Seoul_6.jpeg",
+      ],
+      //videoUrl: ASSETS_URL + "/portfolio/life/Vincy_Sport_Day.mp4",
+      date: t('March') + " 2026",
+      location: t('life.place.seoul'),
+      category: "trips" as const,
+      participants: [ t('life.people.father'), t('life.people.classmates'), t('life.people.teachers')],
+      mood: "🇰🇷",
+      //mediaType: 'mixed' as const
+    },
+    {
+      title: t('life.school.art.work'),
+      description: t('life.school.art.work.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_1.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_2.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_3.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_4.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_5.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_6.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_7.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_8.jpeg",
+      ],
+      date: t('September') + " 2023" + " - " + t('June') + " 2026",
+      location: t('life.place.school'),
+      category: "art" as const,
+      //participants: [t('life.people.father'), t('life.people.mother'), t('life.people.sister'),t('life.people.principal')],
+      mood: "🧑‍🎨"
+    },
   ];
 
   
@@ -754,47 +759,27 @@ function PortfolioApp() {
 
   useEffect(() => {
     const URL = ASSETS_URL + '/api/v1/files';
-    const PREFIX = 'portfolio/additional/caring/';
-    fetchObjectList(URL, PREFIX).then((urls) => {
-      setFetchedPhotoUrls(
-        (urls as string[]).map((url) => ({
-          url,
-          category: 'Caring'
-        }))
-      );
-    });
+    const prefixMap: Array<{ prefix: string; category: string }> = [
+      { prefix: 'portfolio/additional/caring/', category: 'Caring' },
+      { prefix: 'portfolio/additional/sport/', category: 'Sport' },
+      { prefix: 'portfolio/additional/school_events/', category: 'School Events' },
+      { prefix: 'portfolio/additional/cooking/', category: 'Cooking' }
+    ];
 
-    const PREFIX_2 = 'portfolio/additional/sport/';
-    fetchObjectList(URL, PREFIX_2).then((urls) => {
-      setFetchedPhotoUrls((prevUrls) => [
-        ...prevUrls,
-        ...(urls as string[]).map((url) => ({
-          url,
-          category: 'Sport'
-        }))
-      ]);
-    });
-
-    const PREFIX_3 = 'portfolio/additional/school_events/';
-    fetchObjectList(URL, PREFIX_3).then((urls) => {
-      setFetchedPhotoUrls((prevUrls) => [
-        ...prevUrls,
-        ...(urls as string[]).map((url) => ({
-          url,
-          category: 'School Events'
-        }))
-      ]);
-    });
-
-    const PREFIX_4 = 'portfolio/additional/cooking/';
-    fetchObjectList(URL, PREFIX_4).then((urls) => {
-      setFetchedPhotoUrls((prevUrls) => [
-        ...prevUrls,
-        ...(urls as string[]).map((url) => ({
-          url,
-          category: 'Cooking'
-        }))
-      ]);
+    // Fetch all prefixes in parallel and set state once to avoid race conditions
+    Promise.all(
+      prefixMap.map(async (p) => {
+        try {
+          const urls = (await fetchObjectList(URL, p.prefix)) as string[];
+          return urls.map((url) => ({ url, category: p.category }));
+        } catch (e) {
+          return [] as Array<{ url: string; category: string }>;
+        }
+      })
+    ).then((results) => {
+      // flatten and update state once
+      const flattened = results.flat();
+      setFetchedPhotoUrls(flattened);
     });
 
   }, []);
@@ -802,32 +787,6 @@ function PortfolioApp() {
   const carouselPhotos = useMemo(() => {
     const photos: Array<{id: string, src: string, alt: string, title?: string, category?: string}> = [];
     
-    // Add artwork images
-    /*artworks.forEach((artwork, artworkIndex) => {
-      artwork.images.forEach((image, imageIndex) => {
-        photos.push({
-          id: `artwork-${artworkIndex}-${imageIndex}`,
-          src: image,
-          alt: `${artwork.title} - ${artwork.type}`,
-          title: artwork.title,
-          category: artwork.type
-        });
-      });
-    });*/
-
-    // Add personal memory images
-    /*personalMemories.forEach((memory, memoryIndex) => {
-      memory.images.forEach((image, imageIndex) => {
-        photos.push({
-          id: `memory-${memoryIndex}-${imageIndex}`,
-          src: image,
-          alt: `${memory.title}`,
-          title: memory.title,
-          category: memory.category
-        });
-      });
-    });*/
-
     // Add fetched photos
     fetchedPhotoUrls.forEach((element, elementIndex) => {
       photos.push({
@@ -838,7 +797,7 @@ function PortfolioApp() {
         category: element.category
       });
     });
-
+    console.log("Fetched photos for carousel:", photos);
     return photos;
   }, [fetchedPhotoUrls]);
 
