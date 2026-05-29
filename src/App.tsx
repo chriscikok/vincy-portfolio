@@ -358,6 +358,47 @@ function PortfolioApp() {
 
   const personalMemories = [
     {
+      title: t('life.learning.phonics'),
+      description: t('life.learning.phonics.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_British_Council_Phonics_Stage_1.jpg",
+        ASSETS_URL + "/portfolio/life/Vincy_British_Council_Phonics_Stage_2.jpg",
+        ASSETS_URL + "/portfolio/life/Vincy_BC_Phonic_Stage2_Report.jpeg",
+      ],
+      date: t('September') + " 2024" + " - " + t('June') + " 2026",
+      category: "learning" as const,
+      //participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
+      mood: "✅"
+    },
+    {
+      title: t('life.learning.speech'),
+      description: t('life.learning.speech.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_GASCA_international_competition.jpg",
+        ASSETS_URL + "/portfolio/life/Vincy_LCM_HK_Speech_Festival_20250503_Page_1.jpg",
+        ASSETS_URL + "/portfolio/life/Vincy_LCM_HK_Speech_Festival_20250503_Page_2.jpg",
+      ],
+      date: t('July') + " 2024" + " - " + t('May') + " 2025",
+      //location: t('life.place.british.council'),
+      category: "learning" as const,
+      //participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
+      mood: "🗣️"
+    },
+    {
+      title: t('life.learning.chinese.story.telling'),
+      description: t('life.learning.chinese.story.telling.desc'),
+      images: [
+        ASSETS_URL + "/portfolio/life/Vincy_2026_Chinese_Story_Telling.jpg",
+      ],
+      videoUrl: ASSETS_URL + "/portfolio/life/Vincy_2026_Chinese_Story_Telling.mp4",
+      date: t('December') + " 2025",
+      //location: t('life.place.british.council'),
+      category: "learning" as const,
+      //participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
+      mood: "🗣️",
+      mediaType: 'video' as const
+    },
+    {
       title: t('life.school.awards'),
       description: t('life.school.awards.desc'),
       images: [
@@ -369,21 +410,7 @@ function PortfolioApp() {
       participants: [t('life.people.father'), t('life.people.mother'), t('life.people.sister'),t('life.people.principal')],
       mood: "🏆"
     },
-    {
-      title: t('life.school.sports.day'),
-      description: t('life.school.sports.day.desc'),
-      images: [
-        ASSETS_URL + "/portfolio/life/Vincy_Sport_Day_1.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_Sport_Day_2.jpeg",
-      ],
-      videoUrl: ASSETS_URL + "/portfolio/life/Vincy_Sport_Day.mp4",
-      date: t('April') + " 2025",
-      location: t('Shatin'),
-      category: "events" as const,
-      participants: [ t('life.people.father'), t('life.people.mother'), t('life.people.sister'), t('life.people.classmates'), t('life.people.teachers')],
-      mood: "🏃🏻‍♀️",
-      mediaType: 'mixed' as const
-    },
+    
     {
       title: t('life.school.2024.christmas.performance'),
       description: t('life.school.2024.christmas.performance.desc'),
@@ -429,45 +456,21 @@ function PortfolioApp() {
       mediaType: 'mixed' as const
     },
     {
-      title: t('life.learning.phonics'),
-      description: t('life.learning.phonics.desc'),
+      title: t('life.school.sports.day'),
+      description: t('life.school.sports.day.desc'),
       images: [
-        ASSETS_URL + "/portfolio/life/Vincy_British_Council_Phonics_Stage_1.jpg",
-        ASSETS_URL + "/portfolio/life/Vincy_British_Council_Phonics_Stage_2.jpg",
+        ASSETS_URL + "/portfolio/life/Vincy_Sport_Day_1.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Sport_Day_2.jpeg",
       ],
-      date: t('September') + " 2024" + " - " + t('June') + " 2026",
-      category: "learning" as const,
-      //participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
-      mood: "✅"
+      videoUrl: ASSETS_URL + "/portfolio/life/Vincy_Sport_Day.mp4",
+      date: t('April') + " 2025",
+      location: t('Shatin'),
+      category: "events" as const,
+      participants: [ t('life.people.father'), t('life.people.mother'), t('life.people.sister'), t('life.people.classmates'), t('life.people.teachers')],
+      mood: "🏃🏻‍♀️",
+      mediaType: 'mixed' as const
     },
-    {
-      title: t('life.learning.speech'),
-      description: t('life.learning.speech.desc'),
-      images: [
-        ASSETS_URL + "/portfolio/life/Vincy_GASCA_international_competition.jpg",
-        ASSETS_URL + "/portfolio/life/Vincy_LCM_HK_Speech_Festival_20250503_Page_1.jpg",
-        ASSETS_URL + "/portfolio/life/Vincy_LCM_HK_Speech_Festival_20250503_Page_2.jpg",
-      ],
-      date: t('July') + " 2024" + " - " + t('May') + " 2025",
-      //location: t('life.place.british.council'),
-      category: "learning" as const,
-      //participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
-      mood: "🗣️"
-    },
-    {
-      title: t('life.learning.chinese.story.telling'),
-      description: t('life.learning.chinese.story.telling.desc'),
-      images: [
-        ASSETS_URL + "/portfolio/life/Vincy_2026_Chinese_Story_Telling.jpg",
-      ],
-      videoUrl: ASSETS_URL + "/portfolio/life/Vincy_2026_Chinese_Story_Telling.mp4",
-      date: t('December') + " 2025",
-      //location: t('life.place.british.council'),
-      category: "learning" as const,
-      //participants: [t('life.people.grandpa'), t('life.people.grandma'), t('life.people.father'), t('life.people.mother'), t('life.people.sister')],
-      mood: "🗣️",
-      mediaType: 'video' as const
-    },
+    
     {
       title: t('life.family.portrait'),
       description: t('life.family.portrait.desc'),
@@ -542,6 +545,8 @@ function PortfolioApp() {
         ASSETS_URL + "/portfolio/life/Vincy_RAD_PSD2_20250515_Page_1.jpg",
         ASSETS_URL + "/portfolio/life/Vincy_RAD_PSD2_20250515_Page_2.jpg",
         ASSETS_URL + "/portfolio/life/Vincy_Petite_Princess_2025_Award.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_Petite_Princess_2025_Letter.jpeg",
+        
 
       ],
       //videoUrl: ASSETS_URL + "/portfolio/life/Vincy_2025_performance.mp4",
@@ -605,10 +610,10 @@ function PortfolioApp() {
         ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_2.jpeg",
         ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_3.jpeg",
         ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_4.jpeg",
-        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_5.jpeg",
         ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_6.jpeg",
         ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_7.jpeg",
         ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_8.jpeg",
+        ASSETS_URL + "/portfolio/life/Vincy_School_Artwork_9.jpeg",
       ],
       date: t('September') + " 2023" + " - " + t('June') + " 2026",
       location: t('life.place.school'),
